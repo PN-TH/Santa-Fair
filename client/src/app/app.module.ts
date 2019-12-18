@@ -13,7 +13,7 @@ import { CreateComponent } from './pages/create/create.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ReviewComponent
+    ReviewComponent,
     ProductDetailsPageComponent,
     UserReviewComponent,
     CreateComponent
