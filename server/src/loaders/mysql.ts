@@ -10,7 +10,11 @@ export class MysqlConnection {
     this.cnx = createConnection({
       host: 'localhost', // address of the server
       user: 'root', // username
+<<<<<<< HEAD
       password: 'real@Sql2005',
+=======
+      password: 'Droogies',
+>>>>>>> dev
       database: 'santafair_db',
     });
   }
