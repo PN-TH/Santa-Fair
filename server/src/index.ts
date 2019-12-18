@@ -1,5 +1,8 @@
+import { CategoriesController } from './controller/categories.controller';
 import { PostsController } from './controller/posts.controller';
 import { PlacesController } from './controller/places.controller';
+import { CompositionsController } from './controller/compositions.controller';
+import { ArticlesController } from './controller/articles.controller';
 
 import express from 'express';
 
@@ -15,9 +18,12 @@ async function startServer() {
     await loaders(app);
 
     // Ajout des différentes route de votre application
+    CategoriesController(app);
     PostsController(app);
+    PlacesController(app);
+    CompositionsController(app);
     ArticlesController(app);
-    PlacesController(app)
+
 
 
     // Démarrage du serveur une fois que tout est correctement init
