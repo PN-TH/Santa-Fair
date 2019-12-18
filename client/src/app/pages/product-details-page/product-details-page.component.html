@@ -1,7 +1,44 @@
 <div>
-    <div> Détail Produit</div>
-    <div>
-        
+    <div> 
+        Détail Produit :
     </div>
+
+    <div>
+        {{ productService.selectedArticle?.name }}
+    </div>
+
+    <div *ngIf="productService.selectedArticle">
+        <img src="assets/{{productService.selectedArticle?.image}}" alt="{{ productService.selectedArticle?.name }}">
+    </div>
+
+    <div *ngIf="isEnergy">
+        <img src="assets/battery.png" alt="necessite des piles/batterie">
+    </div>
+
+    <div *ngIf="!isEnergy">
+        <img src="assets/no-battery.png" alt="ne necessite pas de piles/batterie">
+    </div>
+
+    <div *ngIf="isDetachedPieces">
+        <img src="assets/spanner.png" alt="Pièces détachées disponibles">
+    </div>
+
+    <div *ngIf="!isDetachedPieces">
+        <img src="assets/no-spanner.png" alt="Pièces détachées non disponibles">
+    </div>
+
+    <div *ngIf="isRecyclable">
+        <img src="assets/recyclable.png" alt="Emballage ecologique">
+    </div>
+
+    <div *ngIf="!isRecyclable">
+        <img src="assets/no-recyclable.png" alt="Suremballage">
+    </div>
+
+    <div>
+        Note Santa Fair : {{ productService.selectedArticle?.note_SF }}
+    </div>
+
+
     <app-user-review></app-user-review>
 </div>

@@ -1,10 +1,10 @@
 import { PostsController } from './controller/posts.controller';
 import { PlacesController } from './controller/places.controller';
+import { ArticlesController } from './controller/articles.controller';
 
 import express from 'express';
 
 import loaders from './loaders';
-import { ArticlesController } from './controller/articles.controller';
 
 
 async function startServer() {
