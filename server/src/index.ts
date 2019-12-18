@@ -4,6 +4,7 @@ import { PlacesController } from './controller/places.controller';
 import express from 'express';
 
 import loaders from './loaders';
+import { ArticlesController } from './controller/articles.controller';
 
 
 async function startServer() {
@@ -15,6 +16,7 @@ async function startServer() {
 
     // Ajout des différentes route de votre application
     PostsController(app);
+    ArticlesController(app);
     PlacesController(app)
 
 
