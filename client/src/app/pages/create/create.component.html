@@ -3,49 +3,87 @@
     <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
         <div>
             <label>
-                Nom * :
+                Nom du jouet * :
                 <input type="text" formControlName="artName">
-                <div *ngIf="userForm.controls['username'].errors && !userForm.controls['username'].pristine"
+                <div *ngIf="articleForm.controls['artName'].errors && !articleForm.controls['artName'].pristine"
                     class="error-msg">
-                    <div [hidden]="!userForm.controls['username'].errors.required">Merci d'entrer un nom de jouet!</div>
+                    <div [hidden]="!articleForm.controls['artName'].errors.required">Merci d'entrer un nom de jouet!</div>
                 </div>
             </label>
         </div>
         <div>
             <label>
+                Ajouter une photo :
+                <input type="file" formControlName="artImage">
+            </label>
+        </div>
+        <div>
+            <label>
                 Lieu de fabrication :
-                <select name="place" formControlName="artPlace">
-                    <option value="volvo">Europe</option>
-                    <option value="saab">Asie</option>
-                    <option value="fiat">Autre</option>
+                <select name="place" formControlName="artPlace" placeholder="Choisissez une origine">
+                    <option value="" selected data-default>Choisissez une origine</option>
+                    <option *ngFor="let place of places" value="{{place.note}}">{{place.name}}</option>
                 </select> 
             </label>
         </div>
+        <div>
+            <label>
+                Catégorie :
+                <select name="place" formControlName="artPlace" placeholder="Choisissez une origine">
+                    <option value="" selected data-default>Choisissez une catégorie</option>
+                    <option *ngFor="let category of gategories" value="category.name">{{gategory.name}}</option>
+                </select> 
+            </label>
+        </div>
+        <div>
+            <label>
+                Est-ce un jouet à piles ? 
+                <input type="radio" name="question" value="oui" id="oui" /> 
+                <label for="oui">oui</label>
+                <input type="radio" name="question" value="non" id="non" /> 
+                <label for="non">non</label>
+            </label>
+        </div>
+        
+        <div>
+            <label>
+                Est-il solide ? 
+                <input type="radio" name="question" value="oui" id="oui" /> 
+                <label for="oui">oui</label>
+                <input type="radio" name="question" value="non" id="non" /> 
+                <label for="non">non</label>
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Est-il facilement réparable?
+                <input type="radio" name="question" value="oui" id="oui" /> 
+                <label for="oui">oui</label>
+                <input type="radio" name="question" value="non" id="non" /> 
+                <label for="non">non</label>
+            </label>
+        </div>
+
      
         <div formGroupName="artAdvice">
+            Voulez-vous évaluer ce jouet ?
             <div>
                 <label>
-                    Adresse :
+                    Votre avis (précisez en quoi le jouet est/n'est pas éthique, éco-responsable...)
                     <input type="textarea" formControlName="artReview">
                 </label>
             </div>
             <div>
                 <label>
-                    CP :
+                    Votre note :
                     <input type="text" formControlName="artNote">
                 </label>
             </div>
         </div>
 
-        <button type="submit" [disabled]="!userForm.valid">Inscription</button>
+        <button type="submit" [disabled]="!articleForm.valid">Inscription</button>
     </form>
 </div>
 
 
-<div>
-    <p>nom : {{user.name}}</p>
-    <p>Email : {{user.email}}</p>
-    <p>mdp : c'est secret !!!</p>
-    <p>Adresse : {{user.adress}} {{user.cp}} {{user.city}}</p>
-
-</div>
