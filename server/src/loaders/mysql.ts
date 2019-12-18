@@ -11,7 +11,8 @@ export class MysqlConnection {
       host: 'localhost', // address of the server
       user: 'root', // username
       password: 'root',
-      database: 'YOUR_DATABASE',
+      database: 'santafair_db',
+      //port : 8889
     });
   }
 

@@ -1,0 +1,51 @@
+<div class="container">
+    <h3>Renseigner un nouveau jouet</h3>
+    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>
+                Nom * :
+                <input type="text" formControlName="artName">
+                <div *ngIf="userForm.controls['username'].errors && !userForm.controls['username'].pristine"
+                    class="error-msg">
+                    <div [hidden]="!userForm.controls['username'].errors.required">Merci d'entrer un nom de jouet!</div>
+                </div>
+            </label>
+        </div>
+        <div>
+            <label>
+                Lieu de fabrication :
+                <select name="place" formControlName="artPlace">
+                    <option value="volvo">Europe</option>
+                    <option value="saab">Asie</option>
+                    <option value="fiat">Autre</option>
+                </select> 
+            </label>
+        </div>
+     
+        <div formGroupName="artAdvice">
+            <div>
+                <label>
+                    Adresse :
+                    <input type="textarea" formControlName="artReview">
+                </label>
+            </div>
+            <div>
+                <label>
+                    CP :
+                    <input type="text" formControlName="artNote">
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="!userForm.valid">Inscription</button>
+    </form>
+</div>
+
+
+<div>
+    <p>nom : {{user.name}}</p>
+    <p>Email : {{user.email}}</p>
+    <p>mdp : c'est secret !!!</p>
+    <p>Adresse : {{user.adress}} {{user.cp}} {{user.city}}</p>
+
+</div>
