@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from 'src/app/shared/article';
+import { ArticleService } from 'src/app/shared/article.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Review } from 'src/app/shared/review';
+import { Place } from 'src/app/shared/place';
 
 @Component({
   selector: 'app-create',
@@ -12,6 +14,7 @@ export class CreateComponent implements OnInit {
  
   article = new Article();
   review = new Review();
+  places : Place[];
 
   articleForm  = this.fb.group({
     artName : ['',[Validators.required]],
@@ -31,17 +34,19 @@ export class CreateComponent implements OnInit {
 
   
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private articleService : ArticleService) { }
 
   ngOnInit() {
+    this.articleService.getPlaces().subscribe((value)=>{this.places=value});
+
   }
 
   
   onSubmit() {
+    console.log(this.places)
     this.article.name = this.articleForm.value.artName;
-    if(this.articleForm.value.artPlace==='Europe'){
-      this.article.place_id = 1;}
-    console.log(this.article.place_id = 1)
+    this.article.place_id = this.articleForm.value.artPlace;
+    console.log(this.article.place_id)
     //this.article.category_id = this.articleForm.value.artCategory;
     if (this.articleForm.value.artEnergy==='oui'){
       this.article.energy = true;}

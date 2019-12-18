@@ -7,6 +7,7 @@ import { ProductDetailsPageComponent } from './pages/product-details-page/produc
 import { UserReviewComponent } from './components/user-review/user-review.component';
 import { CreateComponent } from './pages/create/create.component';
 
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
