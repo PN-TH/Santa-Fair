@@ -1,4 +1,4 @@
-import { PostsController } from './controller/posts.controller';
+import { CategoriesController } from './controller/categories.controller';
 import express from 'express';
 
 import loaders from './loaders';
@@ -11,7 +11,7 @@ async function startServer() {
     await loaders(app);
 
     // Ajout des différentes route de votre application
-    PostsController(app);
+    CategoriesController(app);
 
     // Démarrage du serveur une fois que tout est correctement init
     app.listen(3000, () => console.log('Express server  is running'));
