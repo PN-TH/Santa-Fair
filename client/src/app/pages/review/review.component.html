@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="col-xs-12">
+            <form [formGroup]="reviewForm" (ngSubmit)="addComment()" id="avisForm">
+                <label>
+                    <p>Votre avis :</p>
+                    <textarea id="review" name="review" rows="10" cols="33" formControlName="review">
+                    </textarea>
+                </label>
+
+                <!-- <div class="rating">
+                    <a href="#5" title="Donner 5 étoiles">&#x2605;</a>
+                    <a href="#4" title="Donner 4 étoiles">&#x2605;</a>
+                    <a href="#3" title="Donner 3 étoiles">&#x2605;</a>
+                    <a href="#2" title="Donner 2 étoiles">&#x2605;</a>
+                    <a href="#1" title="Donner 1 étoile">&#x2605;</a>
+                </div> -->
+                <div class="rating">
+                    <div *ngFor="let star of rating; index as i">
+                        <p (click)="ratingStar(star)" id="star{{i}}"
+                            [ngStyle]="{ 'color' : star.isSelected ? 'orange' : 'grey'}"
+                        >{{ star.nom }}</p>
+                    </div>
+                </div>
+
+                <button type="submit" [disabled]="!reviewForm.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div *ngFor="let comment of reviewService.comments">
+    <p>{{ comment.commentaire }}</p>
+</div>
