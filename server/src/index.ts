@@ -2,10 +2,12 @@ import { CategoriesController } from './controller/categories.controller';
 import { PostsController } from './controller/posts.controller';
 import { PlacesController } from './controller/places.controller';
 import { CompositionsController } from './controller/compositions.controller';
+import { ArticlesController } from './controller/articles.controller';
 
 import express from 'express';
 
 import loaders from './loaders';
+import { ArticlesController } from './controller/articles.controller';
 
 
 async function startServer() {
@@ -20,6 +22,8 @@ async function startServer() {
     PostsController(app);
     PlacesController(app);
     CompositionsController(app);
+    ArticlesController(app);
+
 
 
     // Démarrage du serveur une fois que tout est correctement init
