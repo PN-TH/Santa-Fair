@@ -4,11 +4,16 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { CreateComponent } from './pages/create/create.component';
 import { ReviewComponent } from './pages/review/review.component';
 import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
+import { HomeSearchComponent } from './home-search/home-search.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CreateComponent
+    component: HomeSearchComponent
+  },
+  {
+    path: 'home',
+    component: HomeSearchComponent
   },
   {
     path: 'create',
