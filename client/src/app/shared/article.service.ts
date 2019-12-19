@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Article } from './article';
 import { Place } from './place';
 import { Observable } from 'rxjs';
+import { Compo } from './compo';
+import { Category } from './category';
 
 @Injectable({
   providedIn: 'root'
@@ -27,4 +29,12 @@ export class ArticleService {
   };
 
 
+  getCategories(): Observable<any> {
+    return this.http.get<Category[]>(this.baseUrl + '/categories');
+
+  }
+  getCompos(): Observable<any> {
+    return this.http.get<Compo[]>(this.baseUrl + '/compositions');
+
+  }
 }
