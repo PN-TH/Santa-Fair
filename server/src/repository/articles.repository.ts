@@ -51,8 +51,8 @@ export class ArticlesRepository {
      */
     insert(article: Article) {
       return this.connection.query(
-        `INSERT INTO ${this.table} (image, name, energy, piece, packaging, note_SF, category_id, place_id) VALUES (?,?,?,?,?,?,?,?)`,
-        [article.image, article.name, article.energy, article.piece, article.packaging, article.note_SF, article.category_id, article.place_id]
+        `INSERT INTO ${this.table} (image, name, energy, piece, packaging, note_SF, category_id, place_id, composition_id) VALUES (?,?,?,?,?,?,?,?,?)`,
+        [article.image, article.name, article.energy, article.piece, article.packaging, article.note_SF, article.category_id, article.place_id, article.composition_id]
       ).then((result: any) => {
         // After an insert the insert id is directly passed in the promise
         return this.findById(result.insertId);

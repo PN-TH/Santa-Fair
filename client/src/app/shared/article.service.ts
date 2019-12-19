@@ -34,10 +34,14 @@ export class ArticleService {
     return this.http.post(`${this.baseUrl}/avis`, newComment);
   }
   
-  // Récupération des articles stockés dans la base de donnée
+
   getArticles(): Observable<any> {
     return this.http.get(`${this.baseUrl}/articles`)
   };
+
+  addArticle(newArticle : Article){
+    return this.http.post(`${this.baseUrl}/articles`, newArticle);
+  }
 
 
   getCategories(): Observable<any> {

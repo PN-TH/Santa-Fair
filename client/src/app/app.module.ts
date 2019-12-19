@@ -9,10 +9,9 @@ import { ProductDetailsPageComponent } from './pages/product-details-page/produc
 import { UserReviewComponent } from './components/user-review/user-review.component';
 import { CreateComponent } from './pages/create/create.component';
 
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { WishlistComponent } from './pages/wishlist/wishlist.component'
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms'
+import { CreateReviewComponent } from './components/create-review/create-review.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,9 @@ import { ReactiveFormsModule } from '@angular/forms'
     ProductDetailsPageComponent,
     UserReviewComponent,
     CreateComponent,
-    WishlistComponent
-    CreateComponent
+    WishlistComponent,
+    CreateComponent,
+    CreateReviewComponent
 
   ],
   imports: [

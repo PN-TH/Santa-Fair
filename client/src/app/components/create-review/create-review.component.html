@@ -1,0 +1,20 @@
+<form [formGroup]="reviewForm" (ngSubmit)="addComment()" id="avisForm">
+    <label>
+        <p>Votre avis nous intéresse :</p>
+        <textarea id="review" name="review" rows="10" cols="33" formControlName="review">
+                    </textarea>
+    </label>
+
+    <div class="buttons">
+        <div class="rating">
+            <div *ngFor="let star of rating; index as i">
+                <p (click)="ratingStar(star)" id="star{{i}}" [ngStyle]="{ 'color' : star.isSelected ? 'red' : 'grey'}">
+                    {{ star.nom }}</p>
+            </div>
+        </div>
+
+        <a routerLink="/create">
+            <button type="submit" [disabled]="!reviewForm.valid">Ajouter</button>
+        </a>
+    </div>
+</form>
