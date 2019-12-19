@@ -25,6 +25,8 @@ export class ProductDetailsPageComponent implements OnInit {
   }
     addWishlist() {
       this.articleService.wishlistArticle.push(this.articleService.selectedArticle)
+      this.articleService.total = this.articleService.wishlistArticle.length
+      console.log(this.articleService.total)
     }
 
   

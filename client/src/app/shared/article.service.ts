@@ -18,6 +18,7 @@ export class ArticleService {
   articles : Article[]
   selectedArticle : Article;
   wishlistArticle: Article[] = []
+  total: number;
 
   private baseUrl = 'http://localhost:3000';
   
