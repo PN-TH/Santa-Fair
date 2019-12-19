@@ -17,17 +17,24 @@
 
 .create {
     padding: 10px;
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0.5);
     display: flex;
     justify-content: center;
     flex-direction: column;
+    text-align: left;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
+    width: 100%;
+    text-align: center;
 }
 
-.insert-text {
+.amaury {
+    width: 100%;
+}
+
+.amaury input {
     width: 100%;
 }
