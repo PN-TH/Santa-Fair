@@ -5,12 +5,6 @@ export const UploadController = (app: Application) => {
     const router: Router = express.Router();
   
 
-//get
-
-
-
-
-
 //post
 router.post('/', async (req : Request, res : Response) => {
     try {
@@ -21,7 +15,7 @@ router.post('/', async (req : Request, res : Response) => {
             });
         } else {
            
-            let photo: any = req.files.photo;
+            let photo: any = req.files.photo
             console.log(photo)
             
            
