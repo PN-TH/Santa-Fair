@@ -3,7 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Review } from 'src/app/shared/review';
 import { Router } from '@angular/router';
 import { ArticleService } from 'src/app/shared/article.service';
-import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-review',
@@ -14,20 +13,19 @@ export class CreateReviewComponent implements OnInit {
 
   reviewForm = new FormGroup({
     review: new FormControl(''),
-    note: new FormControl('')
   });
+
   note: number;
-  newComment: Review = new Review();
+  newComment: Review ;
 
   rating : any = [{nom: 'C'},{nom: 'C'},{nom: 'C'},{nom: 'C'},{nom: 'C'}];
 
-  constructor(private articleService : ArticleService, private router: Router, private fb: FormBuilder) { }
+  constructor(private articleService : ArticleService, private router: Router) { }
 
   ngOnInit() {
     this.getComments();
     this.addComment();
   }
-
 
   ratingStar(star) {
     for (let i = 0; i <= 4; i++) {
@@ -37,6 +35,7 @@ export class CreateReviewComponent implements OnInit {
       this.rating[i].isSelected = true;
     }
     this.note = this.rating.indexOf(star) + 1;
+    console.log(this.note)
   }
 
   getComments() {
@@ -46,18 +45,20 @@ export class CreateReviewComponent implements OnInit {
   }
 
   addComment(){
-    let newComment = {
-      commentaire : this.reviewForm.value.review,
-      note : this.note,
-      article_id: this.articleService.selectedArticle.id
-    }
-    this.articleService.addComment(newComment).subscribe(
+    this.newComment.commentaire = this.reviewForm.value.review,
+    this.newComment.note = this.note
+    console.log(this.newComment.note)
+    
+    this.articleService.addComment(this.newComment).subscribe(
       result=>{
-        console.log(result)
+        //console.log(result)
       }
     ); 
-    console.log(newComment)
-    //this.router.navigate(['/avis']);
+
   }
 
 }
+
+
+
+
