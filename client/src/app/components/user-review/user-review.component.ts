@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from 'src/app/shared/article.service';
 
 
 @Component({
@@ -9,8 +10,15 @@ import { Component, OnInit } from '@angular/core';
 
 export class UserReviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
+    this.getComments();
   }
+
+  getComments() {
+    this.articleService.getComments().subscribe((response : any) => {
+      this.articleService.comments = response;
+    })
+}
 }
