@@ -86,7 +86,7 @@ export class ArticleService {
         note += article.composition.note
       }
     };
-    article.note_SF = note;
+    return note;
   };
 
 

@@ -59,7 +59,6 @@ export class CreateComponent implements OnInit {
 
   doYouWantReview(){
     this.wantReview = this.articleForm.value.artWant;
-    console.log(this.wantReview)
   }
   onFileSelect(event){
     if (event.target.files.length > 0) {
@@ -83,43 +82,36 @@ export class CreateComponent implements OnInit {
 
   }
     saveArticle(){
-    this.article.name = this.articleForm.value.artName;
-    this.article.category_id = this.articleForm.value.artCategory;
-    if(this.article.place_id){
-      this.article.place_id = this.articleForm.value.artPlace;}
-    if(this.article.composition_id){
-      this.article.composition_id = this.articleForm.value.artCompo;}
-    if(this.articleForm.value.artEnergy){
-      this.article.energy = this.articleForm.value.artEnergy;}
-    if(this.articleForm.value.artPackaging){
-      this.article.packaging = this.articleForm.value.artPackaging;}
-    if(this.articleForm.value.artPiece){
-      this.article.piece = this.articleForm.value.artPiece;}
+      this.article.name = this.articleForm.value.artName;
+      this.article.category_id = this.articleForm.value.artCategory;
+      if(this.article.place_id){
+        this.article.place_id = this.articleForm.value.artPlace;}
+      if(this.article.composition_id){
+        this.article.composition_id = this.articleForm.value.artCompo;}
+      if(this.articleForm.value.artEnergy){
+        this.article.energy = this.articleForm.value.artEnergy;}
+      if(this.articleForm.value.artPackaging){
+        this.article.packaging = this.articleForm.value.artPackaging;}
+      if(this.articleForm.value.artPiece){
+        this.article.piece = this.articleForm.value.artPiece;}
+      
+      this.article.note_SF = this.articleService.getNote(this.article)
 
-    if(this.articleForm.value.artAdvice.artReview){
-      this.review.commentaire = this.articleForm.value.artAdvice.artReview
-    }
-    if(this.articleForm.value.artAdvice.artNote){
-      this.review.note = this.articleForm.value.artAdvice.artNote
-
-    }
-
-    this.articleService.addArticle(this.article).subscribe(
-      result=>{
-        console.log(result)
+      if(this.articleForm.value.artAdvice.artReview){
+        this.review.commentaire = this.articleForm.value.artAdvice.artReview
       }
-    ); 
-    
-    }
-    
-    
-    }
+      if(this.articleForm.value.artAdvice.artNote){
+        this.review.note = this.articleForm.value.artAdvice.artNote
+      }
 
-
-   /*  this.user.email= this.userForm.value.credentials.usermail;
-    this.user.password= this.userForm.value.credentials.userpass;
-    this.user.adress = this.userForm.value.useradress.userroad;
-    this.user.cp = this.userForm.value.useradress.usercp;
-    this.user.city= this.userForm.value.useradress.usercity; */
+      this.articleService.addArticle(this.article).subscribe(
+        result=>{
+          console.log(result)
+        }
+      ); 
+    };
+      
+      
+}
   
 
