@@ -39,6 +39,10 @@
         Note Santa Fair : {{ articleService.selectedArticle?.note_SF }}
     </div>
 
+    <a routerLink="/avis">
+        <button (click)="addReview()">Ajouter un commentaire</button>
+    </a>
+
 
     <app-user-review></app-user-review>
 </div>

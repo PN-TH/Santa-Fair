@@ -7,10 +7,11 @@ import { ReviewComponent } from './pages/review/review.component';
 import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
 import { UserReviewComponent } from './components/user-review/user-review.component';
 import { CreateComponent } from './pages/create/create.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CreateReviewComponent } from './components/create-review/create-review.component'
 import { FormsModule } from '@angular/forms'
 import { WishlistComponent } from './pages/wishlist/wishlist.component'
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HomeSearchComponent } from './home-search/home-search.component'
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HomeSearchComponent } from './home-search/home-search.component'
     ProductDetailsPageComponent,
     UserReviewComponent,
     CreateComponent,
+    CreateReviewComponent,
     HomeSearchComponent,
     WishlistComponent,
     CreateComponent
