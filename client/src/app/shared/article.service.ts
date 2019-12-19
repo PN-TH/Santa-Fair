@@ -19,6 +19,7 @@ export class ArticleService {
   selectedArticle : Article;
   compositions : Compo[]
   wishlistArticle: Article[] = []
+  total: number;
   keyWord : string
 
   private baseUrl = 'http://localhost:3000';
@@ -30,9 +31,14 @@ export class ArticleService {
     return this.http.get<Place[]>(this.baseUrl + '/places');
   }
 
+
   getComments(): Observable<any> {
     return this.http.get(`${this.baseUrl}/avis`);
   };
+
+  getCommentsById(id): Observable<any> {
+     return this.http.get(`${this.baseUrl}/avis:id/?id=${id}`)
+  }
 
   addComment(newComment){
     return this.http.post(`${this.baseUrl}/avis`, newComment);

@@ -20,6 +20,10 @@ const routes: Routes = [
     component: CreateComponent
   },
   {
+    path: 'votre-avis',
+    component: ReviewComponent
+  },
+  {
     path: 'votre-avis/:articleId',
     component: ReviewComponent
   },

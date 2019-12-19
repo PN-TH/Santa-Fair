@@ -17,12 +17,18 @@ export class ProductDetailsPageComponent implements OnInit {
 
   ngOnInit() { this.getArticle()
     this.getComposition()
+    this.getPlaces()
   }
 
   getArticle(){
     this.articleService.getArticles().subscribe(  (response : any) => {
       this.articleService.articles = response;
     })
+  }
+
+  getPlaces(){
+    this.articleService.getPlaces().subscribe((response:any)=>
+    this.articleService.places = response)
   }
 
   getComposition(){
@@ -32,6 +38,8 @@ export class ProductDetailsPageComponent implements OnInit {
   }
     addWishlist() {
       this.articleService.wishlistArticle.push(this.articleService.selectedArticle)
+      this.articleService.total = this.articleService.wishlistArticle.length
+      console.log(this.articleService.total)
     }
 
 }
