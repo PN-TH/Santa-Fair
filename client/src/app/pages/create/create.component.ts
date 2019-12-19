@@ -56,13 +56,23 @@ export class CreateComponent implements OnInit {
 
   onSubmit() {
     this.article.name = this.articleForm.value.artName;
-    this.article.place_id = this.articleForm.value.artPlace;
     this.article.category_id = this.articleForm.value.artCategory;
     this.article.place_id = this.articleForm.value.artPlace;
     this.article.composition_id = this.articleForm.value.artCompo;
     this.article.energy = this.articleForm.value.artEnergy;
     this.article.packaging = this.articleForm.value.artPackaging;
     this.article.piece = this.articleForm.value.artPiece;
+
+    if(this.articleForm.value.artAdvice.artReview){
+      this.review.review = this.articleForm.value.artAdvice.artReview
+    }
+    if(this.articleForm.value.artAdvice.artNote){
+      this.review.note = this.articleForm.value.artAdvice.artNote
+    }
+
+    console.log(this.article)
+    console.log(this.review)
+
 
     
     
