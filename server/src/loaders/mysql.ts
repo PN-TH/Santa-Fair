@@ -12,6 +12,7 @@ export class MysqlConnection {
       user: 'root', // username
       password: 'Droogies',
       database: 'santafair_db',
+
     });
   }
 

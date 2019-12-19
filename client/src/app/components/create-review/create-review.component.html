@@ -1,19 +1,21 @@
 <form [formGroup]="reviewForm" (ngSubmit)="addComment()" id="avisForm">
     <label>
         <p>Votre nom :</p>
-        <input type="text" id="review" name="author"  formControlName="author">           
+        <input type="text" id="review" name="author" formControlName="author">
     </label>
 
     <label>
-        <p>Votre avis nous intéresse :</p>
+        <p>Votre avis nous intéresse* :</p>
         <textarea id="review" name="review" rows="10" cols="33" formControlName="review">
-                    </textarea>
+        </textarea>
+
+
     </label>
 
     <div class="buttons">
         <div class="rating">
             <div *ngFor="let star of rating; index as i">
-                <p (click)="ratingStar(star)" id="star{{i}}" [ngStyle]="{ 'color' : star.isSelected ? 'red' : 'grey'}">
+                <p (click)="ratingStar(star)" id="star{{i}}" [ngStyle]="{ 'color' : star.isSelected ? 'red' : 'white'}">
                     {{ star.nom }}</p>
             </div>
         </div>
@@ -22,4 +24,3 @@
 
     </div>
 </form>
-

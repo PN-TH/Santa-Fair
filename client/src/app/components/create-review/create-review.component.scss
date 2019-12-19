@@ -3,7 +3,7 @@
 }
 
 #avisForm textarea {
-    width: 99%;
+    width: 100%;
 }
 
 #avisForm label p{
@@ -20,7 +20,7 @@
     font-family: 'christmas_iconsregular';
     font-size: 50px;
     margin: 0;
-    color:  #aaa;
+    color:  red;
     cursor: pointer;
     transition: color .4s;
 }
@@ -39,4 +39,12 @@
     justify-content: space-between;
     align-items: center;
     height: 50px;
+}
+
+label {
+    width: 100%;
+}
+
+input {
+    width: 100%;
 }
