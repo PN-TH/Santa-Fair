@@ -25,6 +25,11 @@ export class ReviewsService {
     }
 
 
+    getByArticleId(id: number):Promise<Review>{
+      return this.repository.findByArticleId(id);
+    }
+
+
     getById(id: number): Promise<Review> {
         return this.repository.findById(id);
     }

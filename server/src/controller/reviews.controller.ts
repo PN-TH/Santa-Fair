@@ -26,6 +26,18 @@ export const ReviewsController = (app: Application) => {
         })
     });
 
+    router.get('/search', (req: Request, res: Response) => {
+      const id = parseInt(req.query.article_id);
+      reviewsService.getByArticleId(id).then(results => {
+          res.send(results);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    });
+
+
+
     /**
      * Return only one post in JSON relative to its id
      */

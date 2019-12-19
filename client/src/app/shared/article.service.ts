@@ -36,8 +36,8 @@ export class ArticleService {
     return this.http.get(`${this.baseUrl}/avis`);
   };
 
-  getCommentsById(id): Observable<any> {
-     return this.http.get(`${this.baseUrl}/avis:id/?id=${id}`)
+  getCommentsByArticles(article_id): Observable<any> {
+     return this.http.get(`${this.baseUrl}/avis/search/?article_id=${article_id}`)
   }
 
   addComment(newComment){

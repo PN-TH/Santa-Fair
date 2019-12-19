@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { ArticleService } from 'src/app/shared/article.service';
 
 
@@ -12,14 +12,13 @@ export class UserReviewComponent implements OnInit {
 
   constructor(private articleService: ArticleService) { }
 
-  ngOnInit() {
+  ngOnInit() {this.getCommentsByArticle()
   }
 
-  getCommentsById(id) {
-    if (this.articleService.selectedArticle){
-      this.articleService.getCommentsById(this.articleService.selectedArticle.id).subscribe((response : any) => {
-        this.articleService.comments = response;
-      })
-    }
+  getCommentsByArticle() {
+    this.articleService.getCommentsByArticles(this.articleService.selectedArticle.id).subscribe((response : any) => {
+
+      this.articleService.comments = Object.values(response);
+    })
   }
 }

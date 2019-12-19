@@ -28,7 +28,6 @@ export class CreateReviewComponent implements OnInit {
   
    this.route.paramMap.subscribe((params: ParamMap) => {
     this.articleId = parseInt(params.get('articleId'));
-    console.log(this.articleId)
   });
 
   }
@@ -44,16 +43,16 @@ export class CreateReviewComponent implements OnInit {
     console.log(this.note)
   }
 
-  getComments() {
+/*   getComments() {
       this.articleService.getComments().subscribe((response : any) => {
         this.articleService.comments = response;
       })
-  }
+  } */
 
   addComment(){
     this.newComment.commentaire = this.reviewForm.value.review;
     this.newComment.note = this.note;
-    this.newComment.article_id = this.articleId;
+    this.newComment.article_id = this.articleService.selectedArticle.id;
     console.log(this.newComment.commentaire)
     console.log(this.newComment.note)
     console.log(this.newComment.id)
