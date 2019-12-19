@@ -19,6 +19,7 @@ export class ArticleService {
   selectedArticle : Article;
   compositions : Compo[]
   wishlistArticle: Article[] = []
+  total: number;
   keyWord : string
 
   private baseUrl = 'http://localhost:3000';

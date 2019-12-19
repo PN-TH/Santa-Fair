@@ -25,5 +25,7 @@ export class AppComponent {
 
   deleteWish(i){
     this.articleService.wishlistArticle.splice(i, 1)
+    this.articleService.total--
+    console.log(this.articleService.total)
   }
 }
