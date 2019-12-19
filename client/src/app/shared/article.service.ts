@@ -11,7 +11,9 @@ import { Category } from './category';
 })
 export class ArticleService {
 
-  places : Place[]  
+  places : Place[] 
+  articles : Article[]
+  selectedArticle : Article
 
   private baseUrl = 'http://localhost:3000';
 
@@ -19,8 +21,14 @@ export class ArticleService {
 
   getPlaces(): Observable<any> {
     return this.http.get<Place[]>(this.baseUrl + '/places');
-
   }
+
+  // Récupération des articles stockés dans la base de donnée
+  getArticles(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/articles`)
+  };
+
+
   getCategories(): Observable<any> {
     return this.http.get<Category[]>(this.baseUrl + '/categories');
 
