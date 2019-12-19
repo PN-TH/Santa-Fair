@@ -5,3 +5,58 @@
     display: flex;
     justify-content: space-between;
 }
+
+.pointerCreate {
+ cursor : pointer;
+}
+    
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'christmas_day_personal_useRg';
+    display: inline-block;
+    font-size: 50px;
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(247, 75, 75);
+    color: white;
+    text-shadow: 1px 1px 1px grey;
+    background-image: url('../../../assets/bg_santafair.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.searchbar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ng-autocomplete {
+    width: 350px;
+}
+
+.input-container {
+    border-radius: 22px !important;
+    overflow: hidden;
+}
+
+.autocomplete-container {
+    border-radius: 22px !important;
+    overflow: hidden;
+}
+
+.autocomplete-container .input-container input {
+    border-radius: 22px !important;
+}

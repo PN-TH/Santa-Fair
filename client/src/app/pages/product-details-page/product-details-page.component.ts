@@ -16,6 +16,7 @@ export class ProductDetailsPageComponent implements OnInit {
   constructor(private articleService : ArticleService, private router: Router) { }
 
   ngOnInit() { this.getArticle()
+    this.getComposition()
   }
 
   getArticle(){
@@ -23,16 +24,16 @@ export class ProductDetailsPageComponent implements OnInit {
       this.articleService.articles = response;
     })
   }
+
+  getComposition(){
+    this.articleService.getCompos().subscribe((response: any) => {
+      this.articleService.compositions = response
+    })
+  }
     addWishlist() {
       this.articleService.wishlistArticle.push(this.articleService.selectedArticle)
       this.articleService.total = this.articleService.wishlistArticle.length
       console.log(this.articleService.total)
     }
-
-  
-
-  addReview() {
-    //console.log(this.articleService.selectedArticle)
-  }
 
 }

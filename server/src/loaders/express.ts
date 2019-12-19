@@ -4,6 +4,7 @@
   import { Application } from 'express';
   import fileUpload from 'express-fileupload';
   import morgan from 'morgan';
+  import express from 'express';
   import lodash from 'lodash';
 
   export default async ( app: Application) => {
@@ -15,7 +16,7 @@
     app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
-
+    app.use('/uploads/',express.static('uploads'));
     app.use(fileUpload({
       createParentPath: true
   }));

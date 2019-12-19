@@ -8,6 +8,7 @@ export class Article {
     note_SF!: number;
     category_id!: number;
     place_id!: number;
+    composition_id! : number;
   
     constructor(input: Article) {
       Object.assign(this, input);
