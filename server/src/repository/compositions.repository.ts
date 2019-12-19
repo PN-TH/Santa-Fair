@@ -12,7 +12,7 @@ export class CompositionsRepository {
     private static instance: CompositionsRepository;
     private connection: MysqlConnection = MysqlConnection.getInstance();
 
-    private table: string = 'place';
+    private table: string = 'composition';
 
     static getInstance() {
         if (!this.instance) {

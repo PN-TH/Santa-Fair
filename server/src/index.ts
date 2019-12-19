@@ -1,12 +1,15 @@
-import express from 'express';
-
-import loaders from './loaders';
 import { ReviewsController } from './controller/reviews.controller';
 import { CategoriesController } from './controller/categories.controller';
 import { PostsController } from './controller/posts.controller';
 import { PlacesController } from './controller/places.controller';
 import { CompositionsController } from './controller/compositions.controller';
 import { ArticlesController } from './controller/articles.controller';
+
+import express from 'express';
+//import fileUpload from 'express-fileupload'
+
+import loaders from './loaders';
+
 
 
 async function startServer() {

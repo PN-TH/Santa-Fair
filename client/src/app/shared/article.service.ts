@@ -4,6 +4,8 @@ import { Article } from './article';
 import { Place } from './place';
 import { Observable } from 'rxjs';
 import { Review } from './review';
+import { Compo } from './compo';
+import { Category } from './category';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +31,14 @@ export class ArticleService {
 
   addComment(newComment){
     return this.http.post(`${this.baseUrl}/avis`, newComment);
+  }
+  
+  getCategories(): Observable<any> {
+    return this.http.get<Category[]>(this.baseUrl + '/categories');
+
+  }
+  getCompos(): Observable<any> {
+    return this.http.get<Compo[]>(this.baseUrl + '/compositions');
+
   }
 }

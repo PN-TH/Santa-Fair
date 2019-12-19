@@ -12,6 +12,7 @@ export class MysqlConnection {
       user: 'root', // username
       password: 'real@Sql2005',
       database: 'santafair_db',
+      //port : 8889
     });
   }
 
