@@ -19,7 +19,6 @@ export class ArticleService {
   selectedArticle : Article;
 
   private baseUrl = 'http://localhost:3000';
-
   
 
   constructor(private http: HttpClient) { }
@@ -27,7 +26,6 @@ export class ArticleService {
   getPlaces(): Observable<any> {
     return this.http.get<Place[]>(this.baseUrl + '/places');
   }
-
 
   getComments(): Observable<any> {
     return this.http.get(`${this.baseUrl}/avis`);
