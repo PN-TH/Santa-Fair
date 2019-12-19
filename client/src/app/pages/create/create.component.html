@@ -1,93 +1,82 @@
 <div class="container">
     <div class="create">
-    <h3>Renseigner un nouveau jouet</h3>
-    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()" class="form">
-        <div>
-            <label class="amaury">
-                Nom du jouet * :
-                <br>
-                <input type="text" formControlName="artName">
-                <div *ngIf="articleForm.controls['artName'].errors && !articleForm.controls['artName'].pristine"
-                    class="error-msg">
-                    <div [hidden]="!articleForm.controls['artName'].errors.required">Merci d'entrer un nom de jouet!
-                    </div>
-                </div>
-            </label>
-        </div>
-        <div class="insert-text">
-            <label>
-                Ajouter une photo :
-                <br>
-                <input type="file" name="photo" (change)="onFileSelect($event)"  >
-            </label>
-        </div>
-        <div>
-            <label for="category">
-                <select name="place" formControlName="artCategory" class="choice">
-                    <option value="" selected data-default>Catégorie *</option>
-                    <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
-                </select>
-            </label>
-        </div>
-        <div>
-            <label for="place">
-                <select name="place" formControlName="artPlace" class="choice">
-                    <option value="" selected data-default>Lieu de fabrication</option>
-                    <option *ngFor="let place of places" value="{{place.id}}">{{place.name}}</option>
-                </select>
-            </label>
-        </div>
-        <div>
-            <label for="composition">
-                <select name="place" formControlName="artCompo" class="choice">
-                    <option value="" selected data-default>Composition principale</option>
-                    <option *ngFor="let compo of compos" value="{{compo.id}}">{{compo.name}}</option>
-                </select>
-            </label>
-        </div>
-        <div>
-            <label>
-                Est-ce un jouet à piles ?
-                <input type="radio" formControlName="artEnergy" name="artEnergy" value=1 id="oui" />
-                <label for="oui">oui</label>
-                <input type="radio" formControlName="artEnergy" name="artEnergy" value=0 id="non" />
-                <label for="non">non</label>
-            </label>
-        </div>
+      <h3>Renseigner un nouveau jouet</h3>
+      
+      <form [formGroup]="articleForm" (ngSubmit)="onSubmit()" class="form">
+          <div>
+              <label class="amaury">
+                  Nom du jouet * :
+                  <br>
+                  <input type="text" formControlName="artName">
+                  <div *ngIf="articleForm.controls['artName'].errors && !articleForm.controls['artName'].pristine"
+                      class="error-msg">
+                      <div [hidden]="!articleForm.controls['artName'].errors.required">Merci d'entrer un nom de jouet!
+                      </div>
+                  </div>
+              </label>
+          </div>
+          <div class="insert-text">
+              <label>
+                  Ajouter une photo :
+                  <br>
+                  <input type="file" name="photo" (change)="onFileSelect($event)">
+              </label>
+          </div>
+          <div>
+              <label for="category">
+                  <select name="place" formControlName="artCategory" class="choice">
+                      <option value="" selected data-default>Catégorie *</option>
+                      <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                  </select>
+              </label>
+          </div>
+          <div>
+              <label for="place">
+                  <select name="place" formControlName="artPlace" class="choice">
+                      <option value="" selected data-default>Lieu de fabrication</option>
+                      <option *ngFor="let place of places" value="{{place.id}}">{{place.name}}</option>
+                  </select>
+              </label>
+          </div>
+          <div>
+              <label for="composition">
+                  <select name="place" formControlName="artCompo" class="choice">
+                      <option value="" selected data-default>Composition principale</option>
+                      <option *ngFor="let compo of compos" value="{{compo.id}}">{{compo.name}}</option>
+                  </select>
+              </label>
+          </div>
+          <div>
+              <label>
+                  Est-ce un jouet à piles ?
+                  <input type="radio" formControlName="artEnergy" name="artEnergy" value=1 id="oui" />
+                  <label for="oui">oui</label>
+                  <input type="radio" formControlName="artEnergy" name="artEnergy" value=0 id="non" />
+                  <label for="non">non</label>
+              </label>
+          </div>
 
-        <div>
-            <label>
-                Est-il sur-emballé ?
-                <input type="radio" formControlName="artPackaging" name="artPackaging" value=1 id="oui" />
-                <label for="oui">oui</label>
-                <input type="radio" formControlName="artPackaging" name="artPackaging" value=0 id="non" />
-                <label for="non">non</label>
-            </label>
-        </div>
+          <div>
+              <label>
+                  Est-il sur-emballé ?
+                  <input type="radio" formControlName="artPackaging" name="artPackaging" value=1 id="oui" />
+                  <label for="oui">oui</label>
+                  <input type="radio" formControlName="artPackaging" name="artPackaging" value=0 id="non" />
+                  <label for="non">non</label>
+              </label>
+          </div>
 
-        <div>
-            <label>
-                Est-il facilement réparable?
-                <input type="radio" formControlName="artPiece" name="artPiece" value=1 id="oui" />
-                <label for="oui">oui</label>
-                <input type="radio" formControlName="artPiece" name="artPiece" value=0 id="non" />
-                <label for="non">non</label>
-            </label>
-        </div>
-        <div>
-            <label>
-                Voulez-vous évaluer ce jouet ?
-                <input type="radio" formControlName="artWant" name="artWant" value=true id="oui"
-                    (change)="doYouWantReview($event)" />
-                <label for="oui">oui</label>
-                <input type="radio" formControlName="artWant" name="artWant" value=false id="non"
-                    (change)="doYouWantReview($event)" />
-                <label for="non">non</label>
-            </label>
-        </div>
-        <app-create-review  *ngIf="wantReview==='true'"></app-create-review>
-
-        <button type="submit" [disabled]="!articleForm.valid">Envoyer</button>
-    </form>
+          <div>
+              <label>
+                  Est-il facilement réparable?
+                  <input type="radio" formControlName="artPiece" name="artPiece" value=1 id="oui" />
+                  <label for="oui">oui</label>
+                  <input type="radio" formControlName="artPiece" name="artPiece" value=0 id="non" />
+                  <label for="non">non</label>
+              </label>
+          </div>
+          <button type="submit" [disabled]="!articleForm.valid">Envoyer</button>
+      </form>
     </div>
 </div>
+
