@@ -12,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeSearchComponent } from './pages/home-search/home-search.component';
-import { CreateReviewComponent } from './components/create-review/create-review.component';
+
 
 
 @NgModule({
@@ -21,7 +21,6 @@ import { CreateReviewComponent } from './components/create-review/create-review.
     ReviewComponent,
     ProductDetailsPageComponent,
     UserReviewComponent,
-    WishlistComponent,
     CreateComponent,
     CreateReviewComponent,
     HomeSearchComponent,

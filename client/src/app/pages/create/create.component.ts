@@ -85,9 +85,9 @@ export class CreateComponent implements OnInit {
     saveArticle(){
     this.article.name = this.articleForm.value.artName;
     this.article.category_id = this.articleForm.value.artCategory;
-    if(this.article.place_id){
+    if(this.articleForm.value.artPlace){
       this.article.place_id = this.articleForm.value.artPlace;}
-    if(this.article.composition_id){
+    if(this.articleForm.value.artCompo){
       this.article.composition_id = this.articleForm.value.artCompo;}
     if(this.articleForm.value.artEnergy){
       this.article.energy = this.articleForm.value.artEnergy;}

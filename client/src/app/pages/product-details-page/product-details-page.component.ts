@@ -27,10 +27,4 @@ export class ProductDetailsPageComponent implements OnInit {
       this.articleService.wishlistArticle.push(this.articleService.selectedArticle)
     }
 
-  
-
-  addReview() {
-    //console.log(this.articleService.selectedArticle)
-  }
-
 }
