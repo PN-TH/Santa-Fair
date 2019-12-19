@@ -7,7 +7,7 @@ export const UploadController = (app: Application) => {
 
 //get
 
-router.use(express.static('uploads'));
+
 
 
 
@@ -25,7 +25,7 @@ router.post('/', async (req : Request, res : Response) => {
             console.log(photo)
             
            
-            photo.mv('./../client/src/assets/' + photo.name);
+            photo.mv('./uploads/' + photo.name);
             
    
             res.send({

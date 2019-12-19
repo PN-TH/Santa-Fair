@@ -17,13 +17,13 @@
             <label>
                 Ajouter une photo :
                 <br>
-                <input type="file" formControlName="artImage">
+                <input type="file" name="photo" (change)="onFileSelect($event)" >
             </label>
         </div>
         <div>
             <label for="category">
                 <select name="place" formControlName="artCategory" class="choice">
-                    <option value="" selected data-default>Catégorie</option>
+                    <option value="" selected data-default>Catégorie *</option>
                     <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
                 </select>
             </label>
@@ -39,7 +39,7 @@
         <div>
             <label for="composition">
                 <select name="place" formControlName="artCompo" class="choice">
-                    <option value="" selected data-default>Composition</option>
+                    <option value="" selected data-default>Composition principale</option>
                     <option *ngFor="let compo of compos" value="{{compo.note}}">{{compo.name}}</option>
                 </select>
             </label>
@@ -47,9 +47,9 @@
         <div>
             <label>
                 Est-ce un jouet à piles ?
-                <input type="radio" formControlName="artEnergy" name="artEnergy" value="true" id="oui" />
+                <input type="radio" formControlName="artEnergy" name="artEnergy" value=1 id="oui" />
                 <label for="oui">oui</label>
-                <input type="radio" formControlName="artEnergy" name="artEnergy" value="false" id="non" />
+                <input type="radio" formControlName="artEnergy" name="artEnergy" value=0 id="non" />
                 <label for="non">non</label>
             </label>
         </div>
@@ -57,9 +57,9 @@
         <div>
             <label>
                 Est-il sur-emballé ?
-                <input type="radio" formControlName="artPackaging" name="artPackaging" value="true" id="oui" />
+                <input type="radio" formControlName="artPackaging" name="artPackaging" value=1 id="oui" />
                 <label for="oui">oui</label>
-                <input type="radio" formControlName="artPackaging" name="artPackaging" value="false" id="non" />
+                <input type="radio" formControlName="artPackaging" name="artPackaging" value=0 id="non" />
                 <label for="non">non</label>
             </label>
         </div>
@@ -67,9 +67,9 @@
         <div>
             <label>
                 Est-il facilement réparable?
-                <input type="radio" formControlName="artPiece" name="artPiece" value="true" id="oui" />
+                <input type="radio" formControlName="artPiece" name="artPiece" value=1 id="oui" />
                 <label for="oui">oui</label>
-                <input type="radio" formControlName="artPiece" name="artPiece" value="false" id="non" />
+                <input type="radio" formControlName="artPiece" name="artPiece" value=0 id="non" />
                 <label for="non">non</label>
             </label>
         </div>
@@ -84,25 +84,7 @@
                 <label for="non">non</label>
             </label>
         </div>
-
-
-        <div formGroupName="artAdvice" *ngIf="wantReview==='true'">
-            <div>
-                <div>
-                    <label>
-                        <textarea id="story" name="artReview" formControlName="artReview" rows="5" cols="33">
-                            Votre avis (précisez en quoi le jouet est/n'est pas éthique, éco-responsable...)
-                        </textarea>
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Votre note :
-                        <input type="text" formControlName="artNote">
-                    </label>
-                </div>
-            </div>
-        </div>
+        <app-create-review  *ngIf="wantReview==='true'"></app-create-review>
 
         <button type="submit" [disabled]="!articleForm.valid">Envoyer</button>
     </form>
