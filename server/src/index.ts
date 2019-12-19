@@ -7,7 +7,7 @@ import { ArticlesController } from './controller/articles.controller';
 import express from 'express';
 
 import loaders from './loaders';
-import { ArticlesController } from './controller/articles.controller';
+
 
 
 async function startServer() {
