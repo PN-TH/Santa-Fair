@@ -15,6 +15,8 @@ export class ArticleService {
   places : Place[];
   comment: Review;
   comments : Review[];
+  articles : Article[]
+  selectedArticle : Article
 
   private baseUrl = 'http://localhost:3000';
 
@@ -22,7 +24,6 @@ export class ArticleService {
 
   getPlaces(): Observable<any> {
     return this.http.get<Place[]>(this.baseUrl + '/places');
-
   }
 
   getComments(): Observable<any> {
@@ -33,6 +34,12 @@ export class ArticleService {
     return this.http.post(`${this.baseUrl}/avis`, newComment);
   }
   
+  // Récupération des articles stockés dans la base de donnée
+  getArticles(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/articles`)
+  };
+
+
   getCategories(): Observable<any> {
     return this.http.get<Category[]>(this.baseUrl + '/categories');
 
