@@ -3,6 +3,7 @@
     text-align: center;
     border: 1px solid grey;
     margin-bottom: 10px;
+    background-color: white;
 }
 
 .image img {
@@ -14,7 +15,7 @@
 }
 
 #avisForm textarea {
-    width: 99%;
+    width: 100%;
 }
 
 #avisForm label p{
@@ -53,11 +54,18 @@
 }
 
 .review {
-    padding: 20px 10px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255, 0.5);
 }
 
 h2 {
     font-size: 20px;
     text-align: center;
     margin-bottom: 10px;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }

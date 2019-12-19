@@ -3,7 +3,7 @@
 }
 
 #avisForm textarea {
-    width: 99%;
+    width: 100%;
 }
 
 #avisForm label p{
@@ -39,4 +39,12 @@
     justify-content: space-between;
     align-items: center;
     height: 50px;
+}
+
+label {
+    width: 100%;
+}
+
+input {
+    width: 100%;
 }
