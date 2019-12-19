@@ -13,27 +13,27 @@
 
     <div class="spec">
         <div class="spec-item">
-            <div *ngIf="this.articleService.selectedArticle.energy">
+            <div *ngIf="this.articleService.selectedArticle?.energy">
                 <img src="assets/battery.png" alt="necessite des piles/batterie">
             </div>
         
-            <div *ngIf="!this.articleService.selectedArticle.energy">
+            <div *ngIf="!this.articleService.selectedArticle?.energy">
                 <img src="assets/no-battery.png" alt="ne necessite pas de piles/batterie">
             </div>
         
-            <div *ngIf="this.articleService.selectedArticle.piece">
+            <div *ngIf="this.articleService.selectedArticle?.piece">
                 <img src="assets/spanner.png" alt="Pièces détachées disponibles">
             </div>
         
-            <div *ngIf="!this.articleService.selectedArticle.piece">
+            <div *ngIf="!this.articleService.selectedArticle?.piece">
                 <img src="assets/no-spanner.png" alt="Pièces détachées non disponibles">
             </div>
         
-            <div *ngIf="this.articleService.selectedArticle.packaging">
+            <div *ngIf="this.articleService.selectedArticle?.packaging">
                 <img src="assets/recyclable.png" alt="Emballage ecologique">
             </div>
         
-            <div *ngIf="!this.articleService.selectedArticle.packaging">
+            <div *ngIf="!this.articleService.selectedArticle?.packaging">
                 <img src="assets/no-recyclable.png" alt="Suremballage">
             </div>
         </div>
@@ -56,7 +56,7 @@
             </a>
         
             <a routerLink="/votre-avis">
-                <button (click)="addReview()">Noter</button>
+                <button>Noter</button>
             </a>
         </div>
     </div>

@@ -17,12 +17,18 @@ export class ProductDetailsPageComponent implements OnInit {
 
   ngOnInit() { this.getArticle()
     this.getComposition()
+    this.getPlaces()
   }
 
   getArticle(){
     this.articleService.getArticles().subscribe(  (response : any) => {
       this.articleService.articles = response;
     })
+  }
+
+  getPlaces(){
+    this.articleService.getPlaces().subscribe((response:any)=>
+    this.articleService.places = response)
   }
 
   getComposition(){

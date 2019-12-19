@@ -13,12 +13,13 @@ export class UserReviewComponent implements OnInit {
   constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
-    this.getComments();
   }
 
-  getComments() {
-    this.articleService.getComments().subscribe((response : any) => {
-      this.articleService.comments = response;
-    })
-}
+  getCommentsById(id) {
+    if (this.articleService.selectedArticle){
+      this.articleService.getCommentsById(this.articleService.selectedArticle.id).subscribe((response : any) => {
+        this.articleService.comments = response;
+      })
+    }
+  }
 }
