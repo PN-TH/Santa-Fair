@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from 'src/app/shared/product.service';
+import { ArticleService } from 'src/app/shared/article.service';
 
 @Component({
   selector: 'app-product-details-page',
@@ -12,18 +12,18 @@ export class ProductDetailsPageComponent implements OnInit {
   isDetachedPieces: boolean;
   isRecyclable : boolean;
 
-  constructor(private productService : ProductService) { }
+  constructor(private articleService : ArticleService) { }
 
   ngOnInit() { this.getArticle()
   }
 
   getArticle(){
-    this.productService.getArticles().subscribe((response : any) => {
-      this.productService.articles = response;
-      this.productService.selectedArticle = response[0]
-      this.isEnergy = this.productService.selectedArticle.energy;
-      this.isDetachedPieces = this.productService.selectedArticle.piece;
-      this.isRecyclable = this.productService.selectedArticle.packaging
+    this.articleService.getArticles().subscribe(  (response : any) => {
+      this.articleService.articles = response;
+      this.articleService.selectedArticle = response[0]
+      this.isEnergy = this.articleService.selectedArticle.energy;
+      this.isDetachedPieces = this.articleService.selectedArticle.piece;
+      this.isRecyclable = this.articleService.selectedArticle.packaging
     })
 
   }

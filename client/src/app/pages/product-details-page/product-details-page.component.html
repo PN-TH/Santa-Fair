@@ -4,11 +4,11 @@
     </div>
 
     <div>
-        {{ productService.selectedArticle?.name }}
+        {{ articleService.selectedArticle?.name }}
     </div>
 
-    <div *ngIf="productService.selectedArticle">
-        <img src="assets/{{productService.selectedArticle?.image}}" alt="{{ productService.selectedArticle?.name }}">
+    <div *ngIf="articleService.selectedArticle">
+        <img src="assets/{{articleService.selectedArticle?.image}}" alt="{{ articleService.selectedArticle?.name }}">
     </div>
 
     <div *ngIf="isEnergy">
@@ -36,7 +36,7 @@
     </div>
 
     <div>
-        Note Santa Fair : {{ productService.selectedArticle?.note_SF }}
+        Note Santa Fair : {{ articleService.selectedArticle?.note_SF }}
     </div>
 
 
