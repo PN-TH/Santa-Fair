@@ -29,11 +29,11 @@
             <section>
                 <div class="articleList" *ngFor="let a of articleService.wishlistArticle; index as i">
                     <img class="articlePicture" src="assets/{{a.image}}" alt="{{ a.name }}"/>
-                    <div>
+                    <div class="thomas">
                         <i (click)="deleteWish(i)" class="fas fa-times-circle fa-2x"></i>
                     </div>
                 </div>
-                </section>
+            </section>
         </div>
       </div>
     </div>
