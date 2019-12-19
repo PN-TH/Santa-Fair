@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from 'src/app/shared/article.service';
 
 @Component({
   selector: 'app-product-details-page',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailsPageComponent implements OnInit {
 
-  constructor() { }
+  isEnergy : boolean;
+  isDetachedPieces: boolean;
+  isRecyclable : boolean;
 
-  ngOnInit() {
+  constructor(private articleService : ArticleService) { }
+
+  ngOnInit() { this.getArticle()
+  }
+
+  getArticle(){
+    this.articleService.getArticles().subscribe(  (response : any) => {
+      this.articleService.articles = response;
+      this.articleService.selectedArticle = response[0]
+      this.isEnergy = this.articleService.selectedArticle.energy;
+      this.isDetachedPieces = this.articleService.selectedArticle.piece;
+      this.isRecyclable = this.articleService.selectedArticle.packaging
+    })
+
   }
 
 }
