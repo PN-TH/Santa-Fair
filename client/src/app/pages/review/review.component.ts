@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ReviewService } from 'src/app/shared/review.service';
 import { Review } from 'src/app/shared/review';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-review',
@@ -18,7 +19,7 @@ export class ReviewComponent implements OnInit {
 
   rating : any = [{nom: '☆'},{nom: '☆'},{nom: '☆'},{nom: '☆'},{nom: '☆'}];
 
-  constructor(private reviewService : ReviewService) { }
+  constructor(private reviewService : ReviewService, private router: Router) { }
 
   ngOnInit() {
     this.getComments();
@@ -52,6 +53,7 @@ export class ReviewComponent implements OnInit {
         console.log(result)
       }
     ); 
+    this.router.navigate(['/create']);
   }
    
 
