@@ -1,41 +1,21 @@
-<!-- <form (submit)='onSubmit()'>
-    <label for="name">Nom du jouet</label>
-    <input type="text" id="name" name="name" [(ngModel)]="articleToCompare.name">
-    <button type="submit">Cherches!</button>
-</form> -->
-<div class="home">
-    <div class='title'>
-        <h1>Santa Fair</h1>
-    </div>
-
-    <div class="searchbar">
-        
-        <div class="ng-autocomplete">
-            <ng-autocomplete 
-                [data]="listOfArticlesToDisplay"
-                [searchKeyword]="keyword"
-                (selected)='selectEvent($event)'
-                (inputChanged)='onChangeSearch($event)'
-        
-                [itemTemplate]="itemTemplate"
-                [notFoundTemplate]="notFoundTemplate">                                 
-            </ng-autocomplete>
-            
-            <ng-template #itemTemplate let-item>
-                <div class="displayAutoComplete">
-                    <a [innerHTML]="item.name"></a>
-                    <img src="assets/{{item.image}}" alt="{{item.name}}" class="miniature">
-                </div>
-            </ng-template>
-            
-            <ng-template #notFoundTemplate let-notFound>
-                <div [innerHTML]="notFound"></div>
-            </ng-template>
+<div class="ng-autocomplete">
+    <ng-autocomplete #auto
+        [data]="listOfArticlesToDisplay"
+        [searchKeyword]="keyword"
+        (selected)='selectEvent($event)'
+        (inputChanged)='onChangeSearch($event)'
+        [itemTemplate]="itemTemplate"
+        [notFoundTemplate]="notFoundTemplate">                                 
+    </ng-autocomplete>
+    
+    <ng-template #itemTemplate let-item>
+        <div class="displayAutoComplete">
+            <a [innerHTML]="item.name"></a>
+            <img src="{{item.image}}" alt="" class="miniature">
         </div>
-
-        <a routerLink="/create">
-            <button>Renseigner</button>
-        </a>
-
-    </div>
+    </ng-template>
+    
+    <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="message" (click)="create()" class="pointerCreate"></div>
+    </ng-template>
 </div>
