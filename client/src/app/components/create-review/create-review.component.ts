@@ -57,7 +57,7 @@ export class CreateReviewComponent implements OnInit {
       }
     ); 
     console.log(newComment)
-    //this.router.navigate(['/avis']);
+    //this.router.navigate(['/details']);
   }
 
 }
