@@ -1,31 +1,19 @@
+.image {
+    width: 100%;
+    height: 250px;
+}
+
 #avisForm {
     width: 100%;
 }
 
 #avisForm textarea {
-    width: 100%;
+    width: 99%;
 }
 
-// .rating {
-//     direction: rtl;
-// }
-
-// .rating a {
-//     float: right;
-//     color: #aaa;
-//     text-decoration: none;
-//     font-size: 3em;
-//     transition: color .4s;
-// }
-
-// .rating a:hover,
-// .rating a:focus,
-// .rating a:hover ~ a,
-// .rating a:focus ~ a {
-//     color: orange;
-//     cursor: pointer;
-// }
-
+#avisForm label p{
+    margin: 5px 0;
+}
 
 .rating {
     width: 50%;
@@ -34,7 +22,8 @@
 }
 
 .rating p {
-    font-size: 30px;
+    font-family: 'christmas_iconsregular';
+    font-size: 50px;
     margin: 0;
     color:  #aaa;
     cursor: pointer;
@@ -47,6 +36,12 @@
 .rating p:hover ~ p,
 .rating p:focus ~ p,
 .rating p.active ~ p{
-    color: orange !important;
     cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
 }
