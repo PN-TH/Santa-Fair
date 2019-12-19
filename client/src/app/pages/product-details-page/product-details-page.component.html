@@ -47,7 +47,7 @@
         <button>Voir les commentaires</button>
     </a>
 
-    <a routerLink="/votre-avis">
-        <button (click)="addReview()">Ajouter un commentaire</button>
+    <a routerLink="/votre-avis/{{this.articleService.selectedArticle.id}}">
+        <button>Ajouter un commentaire</button>
     </a>
 </div>
