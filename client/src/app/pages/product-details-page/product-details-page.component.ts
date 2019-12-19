@@ -15,14 +15,21 @@ export class ProductDetailsPageComponent implements OnInit {
   constructor(private articleService : ArticleService) { }
 
   ngOnInit() { this.getArticle()
+    this.getComposition()
   }
 
   getArticle(){
     this.articleService.getArticles().subscribe(  (response : any) => {
       this.articleService.articles = response;
     })
-
   }
+
+  getComposition(){
+    this.articleService.getCompos().subscribe((response: any) => {
+      this.articleService.compositions = response
+    })
+  }
+
 
   addReview() {
     //console.log(this.articleService.selectedArticle)

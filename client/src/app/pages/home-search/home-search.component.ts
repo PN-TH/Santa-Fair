@@ -30,6 +30,7 @@ export class HomeSearchComponent implements OnInit {
   selectEvent(article) {
     this.articleService.selectedArticle = article
     this.router.navigate(["/details"])
+    this.articleService.getNote(article)
   }
 
 
