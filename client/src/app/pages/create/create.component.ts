@@ -110,16 +110,6 @@ export class CreateComponent implements OnInit {
       }
     ); 
     
-    }
-    
-    
-    }
-
-
-   /*  this.user.email= this.userForm.value.credentials.usermail;
-    this.user.password= this.userForm.value.credentials.userpass;
-    this.user.adress = this.userForm.value.useradress.userroad;
-    this.user.cp = this.userForm.value.useradress.usercp;
-    this.user.city= this.userForm.value.useradress.usercity; */
-  
-
+  }
+      
+}

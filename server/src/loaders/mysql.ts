@@ -10,9 +10,9 @@ export class MysqlConnection {
     this.cnx = createConnection({
       host: 'localhost', // address of the server
       user: 'root', // username
-      password: 'Droogies',
+      password: 'root',
       database: 'santafair_db',
-      // port : 8889
+      port : 8889
     });
   }
 

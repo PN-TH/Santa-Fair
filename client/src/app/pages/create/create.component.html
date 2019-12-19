@@ -32,7 +32,7 @@
             <label for="place">
                 <select name="place" formControlName="artPlace" class="choice">
                     <option value="" selected data-default>Lieu de fabrication</option>
-                    <option *ngFor="let place of places" value="{{place.note}}">{{place.name}}</option>
+                    <option *ngFor="let place of places" value="{{place.id}}">{{place.name}}</option>
                 </select>
             </label>
         </div>
@@ -40,7 +40,7 @@
             <label for="composition">
                 <select name="place" formControlName="artCompo" class="choice">
                     <option value="" selected data-default>Composition principale</option>
-                    <option *ngFor="let compo of compos" value="{{compo.note}}">{{compo.name}}</option>
+                    <option *ngFor="let compo of compos" value="{{compo.id}}">{{compo.name}}</option>
                 </select>
             </label>
         </div>
