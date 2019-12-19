@@ -11,6 +11,13 @@
 .fas {
     color: rgb(228, 228, 228);
     margin-right: 6px;
+    cursor: pointer;
+}
+
+.thomas .fas {
+    color: red;
+    font-size: 20px;
+    margin-right: 0;
 }
 
 section {
@@ -20,7 +27,7 @@ section {
 
 .articleList {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
