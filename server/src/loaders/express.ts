@@ -2,6 +2,9 @@
   import bodyParser from 'body-parser';
   import cors from 'cors';
   import { Application } from 'express';
+  import fileUpload from 'express-fileupload';
+  import morgan from 'morgan';
+  import lodash from 'lodash';
 
   export default async ( app: Application) => {
 
@@ -13,8 +16,16 @@
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
 
+    app.use(fileUpload({
+      createParentPath: true
+  }));
+    app.use(morgan('dev'));
+  
+    
+  
     // ...More middlewares
 
     // Return the express app
+    
     return app;
   };

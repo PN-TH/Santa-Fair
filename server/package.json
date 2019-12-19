@@ -25,6 +25,9 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
+    "@types/express-fileupload": "^1.1.0",
+    "@types/lodash": "^4.14.149",
+    "@types/morgan": "^1.7.37",
     "@types/mysql": "^2.15.8",
     "cors": "^2.8.5",
     "express": "^4.17.1",
