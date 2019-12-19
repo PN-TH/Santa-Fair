@@ -44,6 +44,12 @@ export class ArticlesRepository {
           .then((results: any) => new Article(results[0]));
     }
 
+    findBySearch(name: string): Promise<Article[]> {
+        return this.connection.query(`SELECT * FROM ${this.table} WHERE name LIKE ?`, [`%${name}%`])
+          .then((results: any) => {
+            return results.map((articles :any) => new Article(articles))
+          });
+    }
 
     /**
      * Make a query to the database to insert a new article and return the created article in a promise.
