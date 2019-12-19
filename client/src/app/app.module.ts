@@ -7,20 +7,24 @@ import { ProductDetailsPageComponent } from './pages/product-details-page/produc
 import { UserReviewComponent } from './components/user-review/user-review.component';
 import { CreateComponent } from './pages/create/create.component';
 
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { WishlistComponent } from './pages/wishlist/wishlist.component'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductDetailsPageComponent,
     UserReviewComponent,
-    CreateComponent
+    CreateComponent,
+    WishlistComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
