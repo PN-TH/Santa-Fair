@@ -39,6 +39,10 @@ export class ArticlesService {
         return this.repository.findById(id);
     }
 
+    getSearch(name: string): Promise<Article[]>{
+        return this.repository.findBySearch(name);
+    }
+
     /**
      * Create a new article and return a promise which contains the created article.
      * @param article article to create

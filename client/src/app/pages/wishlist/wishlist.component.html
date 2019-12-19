@@ -1,0 +1,13 @@
+
+<section>
+<div class="articleList" *ngFor="let a of article2Service.articles">
+    <img class="articlePicture" src="assets/{{a.image}}" alt="{{a.name}}"/>
+    <div class="written">
+        <p>{{a.name}}</p>
+        <p>{{a.note_SF}}</p>
+    </div>
+    <div>
+        <button>✖</button>
+    </div>
+</div>
+</section>

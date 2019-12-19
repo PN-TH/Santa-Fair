@@ -4,9 +4,10 @@ import { PostsController } from './controller/posts.controller';
 import { PlacesController } from './controller/places.controller';
 import { CompositionsController } from './controller/compositions.controller';
 import { ArticlesController } from './controller/articles.controller';
+import { UploadController } from './controller/upload.controller';
 
 import express from 'express';
-//import fileUpload from 'express-fileupload'
+
 
 import loaders from './loaders';
 
@@ -25,6 +26,7 @@ async function startServer() {
     PlacesController(app);
     CompositionsController(app);
     ArticlesController(app);
+    UploadController(app);
 
 
 
