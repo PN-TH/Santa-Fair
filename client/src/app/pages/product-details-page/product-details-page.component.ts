@@ -17,6 +17,7 @@ export class ProductDetailsPageComponent implements OnInit {
 
   ngOnInit() { this.getArticle()
     this.getComposition()
+    this.getPlaces()
   }
 
   getArticle(){
@@ -25,13 +26,21 @@ export class ProductDetailsPageComponent implements OnInit {
     })
   }
 
+  getPlaces(){
+    this.articleService.getPlaces().subscribe((response:any)=>
+    this.articleService.places = response)
+  }
+
   getComposition(){
     this.articleService.getCompos().subscribe((response: any) => {
       this.articleService.compositions = response
     })
   }
-    addWishlist() {
-      this.articleService.wishlistArticle.push(this.articleService.selectedArticle)
-    }
+
+  addWishlist() {
+    this.articleService.wishlistArticle.push(this.articleService.selectedArticle)
+  }
+
+
 
 }
