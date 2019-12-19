@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ArticleService } from './shared/article.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'client';
+
+
+
+  constructor(private articleService: ArticleService) { }
+  
+  ngOnInit() {
+    this.getArticles();
+  }
+
+  getArticles() {
+    this.articleService.getArticles().subscribe((response:any) => {
+      this.articleService.articles = response;
+    })
+  };
+
+  deleteWish(i){
+    this.articleService.wishlistArticle.splice(i, 1)
+  }
 }
