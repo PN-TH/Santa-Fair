@@ -17,6 +17,7 @@ export class ArticleService {
   comments : Review[];
   articles : Article[]
   selectedArticle : Article;
+  wishlistArticle: Article[] = []
 
   private baseUrl = 'http://localhost:3000';
 
