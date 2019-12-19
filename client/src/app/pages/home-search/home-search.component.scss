@@ -32,7 +32,6 @@ h1 {
 
 .searchbar {
     width: 100%;
-    height: 70px;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -55,4 +54,13 @@ h1 {
 
 .autocomplete-container .input-container input {
     border-radius: 22px !important;
+}
+
+.clement {
+    padding: 10px;
+    background-color: rgb(255, 255, 255, 0.5);
+    margin: 10px;
+    border-radius: 15px ;
+    position: fixed;
+    bottom: 0;
 }
