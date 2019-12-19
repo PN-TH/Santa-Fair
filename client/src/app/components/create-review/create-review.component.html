@@ -1,5 +1,10 @@
 <form [formGroup]="reviewForm" (ngSubmit)="addComment()" id="avisForm">
     <label>
+        <p>Votre nom :</p>
+        <input type="text" id="review" name="author"  formControlName="author">           
+    </label>
+
+    <label>
         <p>Votre avis nous intéresse :</p>
         <textarea id="review" name="review" rows="10" cols="33" formControlName="review">
                     </textarea>
@@ -13,7 +18,7 @@
             </div>
         </div>
 
-            <button type="submit" [disabled]="!reviewForm.valid">Ajouter</button>
+           <button type="submit" [disabled]="!reviewForm.valid">Ajouter</button>
     </div>
 </form>
 

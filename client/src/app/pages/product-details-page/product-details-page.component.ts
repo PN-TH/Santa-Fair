@@ -28,10 +28,4 @@ export class ProductDetailsPageComponent implements OnInit {
       this.router.navigate(['/wishlist'])
     }
 
-  
-
-  addReview() {
-    //console.log(this.articleService.selectedArticle)
-  }
-
 }
