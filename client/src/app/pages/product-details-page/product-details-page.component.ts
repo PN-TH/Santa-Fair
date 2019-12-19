@@ -20,10 +20,6 @@ export class ProductDetailsPageComponent implements OnInit {
   getArticle(){
     this.articleService.getArticles().subscribe(  (response : any) => {
       this.articleService.articles = response;
-      this.articleService.selectedArticle = response[0]
-      this.isEnergy = this.articleService.selectedArticle.energy;
-      this.isDetachedPieces = this.articleService.selectedArticle.piece;
-      this.isRecyclable = this.articleService.selectedArticle.packaging
     })
 
   }

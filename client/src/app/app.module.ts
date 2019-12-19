@@ -11,8 +11,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreateReviewComponent } from './components/create-review/create-review.component'
 import { FormsModule } from '@angular/forms'
 import { WishlistComponent } from './pages/wishlist/wishlist.component'
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeSearchComponent } from './home-search/home-search.component'
+import { HomeSearchComponent } from './pages/home-search/home-search.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { HomeSearchComponent } from './home-search/home-search.component'
     CreateReviewComponent,
     HomeSearchComponent,
     WishlistComponent,
-    CreateComponent
+    CreateComponent,
 
   ],
   imports: [
@@ -33,6 +35,7 @@ import { HomeSearchComponent } from './home-search/home-search.component'
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    AutocompleteLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
