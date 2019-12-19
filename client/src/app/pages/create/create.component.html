@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container create">
     <h3>Renseigner un nouveau jouet</h3>
     <form [formGroup]="articleForm" (ngSubmit)="onSubmit()" class="form">
         <div>
@@ -13,11 +13,11 @@
                 </div>
             </label>
         </div>
-        <div>
+        <div class="insert-text">
             <label>
                 Ajouter une photo :
                 <br>
-                <input type="file" name="photo" (change)="onFileSelect($event)" >
+                <input type="file" name="photo" (change)="onFileSelect($event)"  >
             </label>
         </div>
         <div>
