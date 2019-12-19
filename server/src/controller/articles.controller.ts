@@ -26,6 +26,16 @@ export const ArticlesController = (app: Application) => {
         })
     });
 
+    router.get('/search', (req: Request, res: Response) => {
+      const name = req.query.name;
+      articlesService.getSearch(name).then(results => {
+          res.send(results);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  });
+
     /**
      * Return only one post in JSON relative to its id
      */
