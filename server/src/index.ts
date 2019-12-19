@@ -1,3 +1,4 @@
+import { ReviewsController } from './controller/reviews.controller';
 import { CategoriesController } from './controller/categories.controller';
 import { PostsController } from './controller/posts.controller';
 import { PlacesController } from './controller/places.controller';
@@ -5,6 +6,7 @@ import { CompositionsController } from './controller/compositions.controller';
 import { ArticlesController } from './controller/articles.controller';
 
 import express from 'express';
+//import fileUpload from 'express-fileupload'
 
 import loaders from './loaders';
 
@@ -17,6 +19,7 @@ async function startServer() {
     await loaders(app);
 
     // Ajout des différentes route de votre application
+    ReviewsController(app);
     CategoriesController(app);
     PostsController(app);
     PlacesController(app);

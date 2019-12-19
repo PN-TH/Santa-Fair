@@ -9,4 +9,5 @@ export class Article {
     category_id : number;
     avis_id : number;
     place_id : number;
+    composition_id : number;
 }

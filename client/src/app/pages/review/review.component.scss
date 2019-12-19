@@ -1,0 +1,52 @@
+#avisForm {
+    width: 100%;
+}
+
+#avisForm textarea {
+    width: 100%;
+}
+
+// .rating {
+//     direction: rtl;
+// }
+
+// .rating a {
+//     float: right;
+//     color: #aaa;
+//     text-decoration: none;
+//     font-size: 3em;
+//     transition: color .4s;
+// }
+
+// .rating a:hover,
+// .rating a:focus,
+// .rating a:hover ~ a,
+// .rating a:focus ~ a {
+//     color: orange;
+//     cursor: pointer;
+// }
+
+
+.rating {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating p {
+    font-size: 30px;
+    margin: 0;
+    color:  #aaa;
+    cursor: pointer;
+    transition: color .4s;
+}
+
+.rating p:hover,
+.rating p:focus,
+.rating p.active,
+.rating p:hover ~ p,
+.rating p:focus ~ p,
+.rating p.active ~ p{
+    color: orange !important;
+    cursor: pointer;
+}
