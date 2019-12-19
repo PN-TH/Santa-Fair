@@ -12,11 +12,28 @@ export class ArticleService {
   places : Place[]  
 
   private baseUrl = 'http://localhost:3000';
+  articles: Article[];
+  
 
   constructor(private http: HttpClient) { }
 
   getPlaces(): Observable<any> {
     return this.http.get<Place[]>(this.baseUrl + '/places');
-
   }
+
+  getArticles(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/articles`)
+  }
+
+  getArticleArray(){
+    this.getArticles().subscribe((response :any)=>{
+      this.articles = response
+    }) 
+  }
+
+  search(name): Observable<any> {
+    return this.http.get(`${this.baseUrl}/articles/search/?name=${name}`)
+  }
+
+
 }
