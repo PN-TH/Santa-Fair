@@ -24,4 +24,8 @@ export class ProductDetailsPageComponent implements OnInit {
 
   }
 
+  addReview() {
+    //console.log(this.articleService.selectedArticle)
+  }
+
 }
