@@ -45,10 +45,9 @@ export class CreateReviewComponent implements OnInit {
   }
 
   addComment(){
-    
     this.newComment.commentaire = this.reviewForm.value.review,
     this.newComment.note = this.note
-    console.log(this.note)
+    console.log(this.newComment.note)
     
     this.articleService.addComment(this.newComment).subscribe(
       result=>{

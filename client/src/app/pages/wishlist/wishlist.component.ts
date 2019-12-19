@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Article2Service } from 'src/app/article2.service';
+import { ArticleService } from 'src/app/shared/article.service';
 
 @Component({
   selector: 'app-wishlist',
@@ -8,16 +8,21 @@ import { Article2Service } from 'src/app/article2.service';
 })
 export class WishlistComponent implements OnInit {
 
-  constructor(private article2Service: Article2Service) { }
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
     this.getArticles();
   }
 
   getArticles() {
-    this.article2Service.getArticles().subscribe((response:any) => {
-      this.article2Service.articles = response;
+    this.articleService.getArticles().subscribe((response:any) => {
+      this.articleService.articles = response;
     })
   };
+
+  deleteWish(a){
+    this.articleService.wishlistArticle.splice(a, 1)
+    console.log(this.articleService.wishlistArticle)
+  }
 
 }

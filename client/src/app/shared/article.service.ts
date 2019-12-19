@@ -17,8 +17,10 @@ export class ArticleService {
   comments : Review[];
   articles : Article[]
   selectedArticle : Article;
+  wishlistArticle: Article[] = []
 
   private baseUrl = 'http://localhost:3000';
+  
 
   constructor(private http: HttpClient) { }
 
@@ -46,10 +48,21 @@ export class ArticleService {
 
   getCategories(): Observable<any> {
     return this.http.get<Category[]>(this.baseUrl + '/categories');
-
   }
+
   getCompos(): Observable<any> {
     return this.http.get<Compo[]>(this.baseUrl + '/compositions');
-
   }
+
+  getArticleArray(){
+    this.getArticles().subscribe((response :any)=>{
+      this.articles = response
+    }) 
+  }
+
+  search(name): Observable<any> {
+    return this.http.get(`${this.baseUrl}/articles/search/?name=${name}`)
+  }
+
+
 }

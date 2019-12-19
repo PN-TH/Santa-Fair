@@ -1,0 +1,28 @@
+<!-- <form (submit)='onSubmit()'>
+    <label for="name">Nom du jouet</label>
+    <input type="text" id="name" name="name" [(ngModel)]="articleToCompare.name">
+    <button type="submit">Cherches!</button>
+</form> -->
+
+<div class="ng-autocomplete">
+    <ng-autocomplete 
+        [data]="listOfArticlesToDisplay"
+        [searchKeyword]="keyword"
+        (selected)='selectEvent($event)'
+        (inputChanged)='onChangeSearch($event)'
+
+        [itemTemplate]="itemTemplate"
+        [notFoundTemplate]="notFoundTemplate">                                 
+    </ng-autocomplete>
+    
+    <ng-template #itemTemplate let-item>
+        <div class="displayAutoComplete">
+            <a [innerHTML]="item.name"></a>
+            <img src="assets/{{item.image}}" alt="" class="miniature">
+        </div>
+    </ng-template>
+    
+    <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+    </ng-template>
+</div>

@@ -1,1 +1,12 @@
-<app-create-review></app-create-review>
+<div class="container-fluid">
+    <div class="container">
+        <div class="col-xs-12">
+            <div class="image">
+                <img src="assets/{{articleService.selectedArticle?.image}}" alt="{{ articleService.selectedArticle?.name }}" />
+            </div>
+           
+            <app-create-review></app-create-review>
+        </div>
+    </div>
+</div>
+
