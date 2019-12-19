@@ -8,13 +8,6 @@
                     </textarea>
                 </label>
 
-                <!-- <div class="rating">
-                    <a href="#5" title="Donner 5 étoiles">&#x2605;</a>
-                    <a href="#4" title="Donner 4 étoiles">&#x2605;</a>
-                    <a href="#3" title="Donner 3 étoiles">&#x2605;</a>
-                    <a href="#2" title="Donner 2 étoiles">&#x2605;</a>
-                    <a href="#1" title="Donner 1 étoile">&#x2605;</a>
-                </div> -->
                 <div class="rating">
                     <div *ngFor="let star of rating; index as i">
                         <p (click)="ratingStar(star)" id="star{{i}}"
@@ -23,13 +16,15 @@
                     </div>
                 </div>
 
+                <a routerLink="/create">
                 <button type="submit" [disabled]="!reviewForm.valid">Submit</button>
+                </a>
             </form>
         </div>
     </div>
 </div>
 
-
-<div *ngFor="let comment of reviewService.comments">
+<p>{{ newComment.commentaire }}</p>
+<!-- <div *ngFor="let comment of articleService.comments">
     <p>{{ comment.commentaire }}</p>
-</div>
+</div> -->

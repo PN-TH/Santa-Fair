@@ -3,13 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { Article } from './article';
 import { Place } from './place';
 import { Observable } from 'rxjs';
+import { Review } from './review';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
 
-  places : Place[]  
+  places : Place[];
+  comment: Review;
+  comments : Review[];
 
   private baseUrl = 'http://localhost:3000';
 
@@ -18,5 +21,13 @@ export class ArticleService {
   getPlaces(): Observable<any> {
     return this.http.get<Place[]>(this.baseUrl + '/places');
 
+  }
+
+  getComments(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/avis`);
+  };
+
+  addComment(newComment){
+    return this.http.post(`${this.baseUrl}/avis`, newComment);
   }
 }
