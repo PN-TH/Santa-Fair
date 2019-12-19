@@ -25,7 +25,6 @@ export class ProductDetailsPageComponent implements OnInit {
   }
     addWishlist() {
       this.articleService.wishlistArticle.push(this.articleService.selectedArticle)
-      this.router.navigate(['/wishlist'])
     }
 
   
