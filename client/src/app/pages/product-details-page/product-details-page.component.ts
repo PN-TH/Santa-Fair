@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/shared/article.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-details-page',
@@ -12,7 +13,7 @@ export class ProductDetailsPageComponent implements OnInit {
   isDetachedPieces: boolean;
   isRecyclable : boolean;
 
-  constructor(private articleService : ArticleService) { }
+  constructor(private articleService : ArticleService, private router: Router) { }
 
   ngOnInit() { this.getArticle()
   }
@@ -21,8 +22,13 @@ export class ProductDetailsPageComponent implements OnInit {
     this.articleService.getArticles().subscribe(  (response : any) => {
       this.articleService.articles = response;
     })
-
   }
+    addWishlist() {
+      this.articleService.wishlistArticle.push(this.articleService.selectedArticle)
+      this.router.navigate(['/wishlist'])
+    }
+
+  
 
   addReview() {
     //console.log(this.articleService.selectedArticle)
