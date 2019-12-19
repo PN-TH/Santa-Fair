@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Review } from 'src/app/shared/review';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ArticleService } from 'src/app/shared/article.service';
-import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-review',
@@ -11,23 +10,28 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./create-review.component.scss']
 })
 export class CreateReviewComponent implements OnInit {
-
+  articleId : number;
   reviewForm = new FormGroup({
+    author: new FormControl(''),
     review: new FormControl(''),
-    note: new FormControl('')
   });
+
+
   note: number;
   newComment: Review = new Review();
 
   rating : any = [{nom: 'C'},{nom: 'C'},{nom: 'C'},{nom: 'C'},{nom: 'C'}];
 
-  constructor(private articleService : ArticleService, private router: Router, private fb: FormBuilder) { }
+  constructor(private articleService : ArticleService, private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getComments();
-    this.addComment();
-  }
+  
+   this.route.paramMap.subscribe((params: ParamMap) => {
+    this.articleId = parseInt(params.get('articleId'));
+    console.log(this.articleId)
+  });
 
+  }
 
   ratingStar(star) {
     for (let i = 0; i <= 4; i++) {
@@ -37,6 +41,7 @@ export class CreateReviewComponent implements OnInit {
       this.rating[i].isSelected = true;
     }
     this.note = this.rating.indexOf(star) + 1;
+    console.log(this.note)
   }
 
   getComments() {
@@ -46,18 +51,23 @@ export class CreateReviewComponent implements OnInit {
   }
 
   addComment(){
-    let newComment = {
-      commentaire : this.reviewForm.value.review,
-      note : this.note,
-      article_id: this.articleService.selectedArticle.id
-    }
-    this.articleService.addComment(newComment).subscribe(
+    this.newComment.commentaire = this.reviewForm.value.review;
+    this.newComment.note = this.note;
+    this.newComment.article_id = this.articleId;
+    console.log(this.newComment.commentaire)
+    console.log(this.newComment.note)
+    console.log(this.newComment.id)
+    
+    this.articleService.addComment(this.newComment).subscribe(
       result=>{
         console.log(result)
       }
     ); 
-    console.log(newComment)
-    //this.router.navigate(['/details']);
+    this.router.navigate(['/details']);
   }
 
 }
+
+
+
+

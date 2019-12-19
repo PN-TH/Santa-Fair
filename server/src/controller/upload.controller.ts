@@ -5,27 +5,21 @@ export const UploadController = (app: Application) => {
     const router: Router = express.Router();
   
 
-//get
-
-router.use(express.static('uploads'));
-
-
-
 //post
 router.post('/', async (req : Request, res : Response) => {
     try {
-        if(!req) {
+        if(!req.files) {
             res.send({
                 status: false,
                 message: 'No file uploaded'
             });
         } else {
            
-            let photo: any = req;
+            let photo: any = req.files.photo
             console.log(photo)
             
            
-            photo.mv('./../client/src/assets/' + photo.name);
+            photo.mv('./uploads/' + photo.name);
             
    
             res.send({
