@@ -39,31 +39,11 @@ export class ReviewsRepository {
     }
 
 
-    // insert(review: Review) {
-    //   return this.connection.query(
-        
-    //     `INSERT INTO ${this.table} (commentaire, note, article_id) VALUES (?,?)`,
-    //     [review.commentaire, review.note, review.article_id]
-    //   ).then((result: any) => {
-    //     return this.findById(result.insertId);
-    //   });
-    // }
-
-
-    // update(review: Review) {
-    //   return this.connection.query(
-    //     `UPDATE ${this.table} SET commentaire = ?, note = ?, article_id = ?, WHERE id = ?`,
-    //     [review.commentaire, review.note, review.id, review.article_id]
-    //   ).then(() => {
-    //     return this.findById(review.id);
-    //   });
-    // }
-
     insert(review: Review) {
       return this.connection.query(
         
-        `INSERT INTO ${this.table} (commentaire, note) VALUES (?,?)`,
-        [review.commentaire, review.note]
+        `INSERT INTO ${this.table} (commentaire, note, article_id) VALUES (?,?,?)`,
+        [review.commentaire, review.note, review.article_id]
       ).then((result: any) => {
         return this.findById(result.insertId);
       });
@@ -72,12 +52,32 @@ export class ReviewsRepository {
 
     update(review: Review) {
       return this.connection.query(
-        `UPDATE ${this.table} SET commentaire = ?, note = ? WHERE id = ?`,
-        [review.commentaire, review.note, review.id]
+        `UPDATE ${this.table} SET commentaire = ?, note = ?, article_id = ?, WHERE id = ?`,
+        [review.commentaire, review.note, review.article_id, review.id]
       ).then(() => {
         return this.findById(review.id);
       });
     }
+
+    // insert(review: Review) {
+    //   return this.connection.query(
+        
+    //     `INSERT INTO ${this.table} (commentaire, note) VALUES (?,?)`,
+    //     [review.commentaire, review.note]
+    //   ).then((result: any) => {
+    //     return this.findById(result.insertId);
+    //   });
+    // }
+
+
+    // update(review: Review) {
+    //   return this.connection.query(
+    //     `UPDATE ${this.table} SET commentaire = ?, note = ? WHERE id = ?`,
+    //     [review.commentaire, review.note, review.id]
+    //   ).then(() => {
+    //     return this.findById(review.id);
+    //   });
+    // }
 
 
     delete(id: number): Promise<any> {
