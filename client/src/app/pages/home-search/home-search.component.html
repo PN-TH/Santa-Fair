@@ -24,7 +24,9 @@
                     <img src="{{item.image}}" alt="" class="miniature">
                 </div>
             </ng-template>
-            
+        <div class="add">
+           <button type="button" class="btn btn-light"><a routerLink="/create">Ajouter un jouet</a></button>
+        </div>
             <ng-template #notFoundTemplate let-notFound>
                 <div [innerHTML]="message" (click)="create()" class="pointerCreate"></div>
             </ng-template>
