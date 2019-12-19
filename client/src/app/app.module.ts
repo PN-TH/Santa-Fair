@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms'
 import { WishlistComponent } from './pages/wishlist/wishlist.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeSearchComponent } from './pages/home-search/home-search.component'
+import { HttpClientModule } from '@angular/common/http';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { HomeSearchComponent } from './pages/home-search/home-search.component'
     CreateComponent,
     HomeSearchComponent,
     WishlistComponent,
-    CreateComponent
+    CreateComponent,
 
   ],
   imports: [
@@ -30,6 +32,7 @@ import { HomeSearchComponent } from './pages/home-search/home-search.component'
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    AutocompleteLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
