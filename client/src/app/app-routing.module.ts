@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { CreateComponent } from './pages/create/create.component';
 import { ReviewComponent } from './pages/review/review.component';
 import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'details',
     component: ProductDetailsPageComponent
+  },
+  {
+    path: 'wishlist',
+    component: WishlistComponent
   }
 ];
 
