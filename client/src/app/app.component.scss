@@ -67,6 +67,23 @@ $black: #000000;
 .modal-content {
     border: 2px solid white;
 }
+
+.cercle {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(179, 38, 38);
+    border-radius: 50%;
+    position: absolute;
+    left: -7px;
+    
+}
+
+.cercle p {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
 nav {
     position: fixed;
 

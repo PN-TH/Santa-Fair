@@ -1,8 +1,12 @@
 <div class="container-fluid">
     <div class="container">
-        <div class="col-xs-12">
+        <div class="col-xs-12" class="review">
+            <div>
+                <h2>{{ articleService.selectedArticle?.name }}</h2>
+            </div>
+
             <div class="image">
-                <img src="assets/{{articleService.selectedArticle?.image}}" alt="{{ articleService.selectedArticle?.name }}" />
+                <img src="{{articleService.selectedArticle?.image}}" alt="{{ articleService.selectedArticle?.name }}" />
             </div>
            
             <app-create-review></app-create-review>

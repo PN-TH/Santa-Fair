@@ -1,21 +1,32 @@
-<div class="ng-autocomplete">
-    <ng-autocomplete #auto
-        [data]="listOfArticlesToDisplay"
-        [searchKeyword]="keyword"
-        (selected)='selectEvent($event)'
-        (inputChanged)='onChangeSearch($event)'
-        [itemTemplate]="itemTemplate"
-        [notFoundTemplate]="notFoundTemplate">                                 
-    </ng-autocomplete>
-    
-    <ng-template #itemTemplate let-item>
-        <div class="displayAutoComplete">
-            <a [innerHTML]="item.name"></a>
-            <img src="{{item.image}}" alt="" class="miniature">
+<div class="home">
+    <div class='title'>
+        <h1>Santa Fair</h1>
+    </div>
+
+    <div class="searchbar">
+        <div>
+            <p>Chercher un jouet :</p>
         </div>
-    </ng-template>
-    
-    <ng-template #notFoundTemplate let-notFound>
-        <div [innerHTML]="message" (click)="create()" class="pointerCreate"></div>
-    </ng-template>
-</div>
+        
+        <div class="ng-autocomplete">
+            <ng-autocomplete #auto
+                [data]="listOfArticlesToDisplay"
+                [searchKeyword]="keyword"
+                (selected)='selectEvent($event)'
+                (inputChanged)='onChangeSearch($event)'
+                [itemTemplate]="itemTemplate"
+                [notFoundTemplate]="notFoundTemplate">                                 
+            </ng-autocomplete>
+            
+            <ng-template #itemTemplate let-item>
+                <div class="displayAutoComplete">
+                    <a [innerHTML]="item.name"></a>
+                    <img src="{{item.image}}" alt="" class="miniature">
+                </div>
+            </ng-template>
+            
+            <ng-template #notFoundTemplate let-notFound>
+                <div [innerHTML]="message" (click)="create()" class="pointerCreate"></div>
+            </ng-template>
+        </div>
+    </div>
