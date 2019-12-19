@@ -1,5 +1,5 @@
 <div>
-    <div> 
+    <div>
         Détail Produit :
     </div>
 
@@ -37,6 +37,16 @@
 
     <div>
         Note Santa Fair : {{ articleService.selectedArticle?.note_SF }}
+    </div>
+    <div class="alternative">
+        <div *ngIf="alternative">
+            L'alternative : <img [src]="alternative.image"> 
+            <div>{{alternative.name}}</div>
+            <div>Note Santa Fair : {{alternative.note_SF}}</div>
+        </div>
+        <div *ngIf="!alternative && this.articleService.selectedArticle?.note_SF<4">
+            Pas encore d'alternative pour ce jouet
+        </div>
     </div>
 
     <button (click)="addWishlist()">Ajouter cet article à ma liste</button>

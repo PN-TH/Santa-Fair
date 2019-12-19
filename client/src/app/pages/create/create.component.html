@@ -17,7 +17,7 @@
             <label>
                 Ajouter une photo :
                 <br>
-                <input type="file" name="photo" (change)="onFileSelect($event)" >
+                <input type="file" name="photo" (change)="onFileSelect($event)">
             </label>
         </div>
         <div>
@@ -73,19 +73,6 @@
                 <label for="non">non</label>
             </label>
         </div>
-        <div>
-            <label>
-                Voulez-vous évaluer ce jouet ?
-                <input type="radio" formControlName="artWant" name="artWant" value=true id="oui"
-                    (change)="doYouWantReview($event)" />
-                <label for="oui">oui</label>
-                <input type="radio" formControlName="artWant" name="artWant" value=false id="non"
-                    (change)="doYouWantReview($event)" />
-                <label for="non">non</label>
-            </label>
-        </div>
-        <app-create-review  *ngIf="wantReview==='true'"></app-create-review>
-
         <button type="submit" [disabled]="!articleForm.valid">Envoyer</button>
     </form>
 </div>

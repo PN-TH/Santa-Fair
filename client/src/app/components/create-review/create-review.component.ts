@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Review } from 'src/app/shared/review';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ArticleService } from 'src/app/shared/article.service';
+import { Article } from 'src/app/shared/article';
 
 @Component({
   selector: 'app-create-review',
@@ -10,10 +11,12 @@ import { ArticleService } from 'src/app/shared/article.service';
   styleUrls: ['./create-review.component.scss']
 })
 export class CreateReviewComponent implements OnInit {
+  @Input() article : Article;
+
   articleId : number;
   reviewForm = new FormGroup({
     author: new FormControl(''),
-    review: new FormControl(''),
+    review: new FormControl('',[Validators.required]),
   });
 
 
@@ -53,7 +56,9 @@ export class CreateReviewComponent implements OnInit {
   addComment(){
     this.newComment.commentaire = this.reviewForm.value.review;
     this.newComment.note = this.note;
-    this.newComment.article_id = this.articleId;
+    if (this.articleId){
+     this.newComment.article_id = this.articleId;}
+    else{this.newComment.article_id = this.article.id}
     console.log(this.newComment.commentaire)
     console.log(this.newComment.note)
     console.log(this.newComment.id)
