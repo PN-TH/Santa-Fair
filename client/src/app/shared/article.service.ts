@@ -19,6 +19,7 @@ export class ArticleService {
   selectedArticle : Article;
   compositions : Compo[]
   wishlistArticle: Article[] = []
+  keyWord : string
 
   private baseUrl = 'http://localhost:3000';
   
@@ -66,28 +67,32 @@ export class ArticleService {
   }
 
   getNote(article){
-    let note : number;
-    if (article.energy){
-      note -= 1
+    let note : number = 0
+    if (parseInt(article.energy) === 0){
+      note += 1 
     };
-    if (article.piece){
+    if (parseInt(article.piece) === 1){
       note += 1
     };
-    if (article.packaging){
-      note -= 1
+    if (!parseInt(article.packaging)){
+      note += 1
     };
     for (let place of this.places){
-      if (article.place_id === place.id){
+      if (article.place_id == place.id){
         note += place.note
       }
     };
     for (let composition of this.compositions){
-      if (composition.id === article.composition_id){
-        note += article.composition.note
+      if (composition.id == article.composition_id){
+        note += composition.note
       }
     };
     return note;
   };
+
+  initName(keyWord){
+    this.keyWord = keyWord
+  }
 
 
 }

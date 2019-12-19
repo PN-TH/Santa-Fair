@@ -8,7 +8,7 @@
     </div>
 
     <div *ngIf="articleService.selectedArticle">
-        <img src="assets/{{articleService.selectedArticle?.image}}" alt="{{ articleService.selectedArticle?.name }}">
+        <img src="{{articleService.selectedArticle?.image}}" alt="{{ articleService.selectedArticle?.name }}">
     </div>
 
     <div *ngIf="this.articleService.selectedArticle?.energy">

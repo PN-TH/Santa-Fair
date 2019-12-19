@@ -27,7 +27,7 @@ export class CreateComponent implements OnInit {
 
 
   articleForm  = this.fb.group({
-    artName : ['',[Validators.required]],
+    artName : [`${this.articleService.keyWord}`,[Validators.required]],
     artCategory : [''],
     artEnergy : [''],
     artPiece : [''],
@@ -48,12 +48,16 @@ export class CreateComponent implements OnInit {
   constructor(private fb: FormBuilder,private articleService : ArticleService,private httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.articleService.getPlaces().subscribe((value)=>{this.places=value});
-    this.articleService.getCompos().subscribe((value)=>{this.compos=value});
+    this.articleService.getPlaces().subscribe((value)=>{this.places=value;
+    this.articleService.places=value});
+    this.articleService.getCompos().subscribe((value)=>{this.compos=value;
+    this.articleService.compositions=value});
     this.articleService.getCategories().subscribe((value)=>{this.categories=value});
     this.uploadForm = this.fb.group({
       photo: ['']
     });
+ 
+
 
   }
 
@@ -66,6 +70,9 @@ export class CreateComponent implements OnInit {
       this.uploadForm.get('photo').setValue(file);}
 
   }
+
+
+
 
   onSubmit() {
     const formData = new FormData();
@@ -84,9 +91,9 @@ export class CreateComponent implements OnInit {
     saveArticle(){
       this.article.name = this.articleForm.value.artName;
       this.article.category_id = this.articleForm.value.artCategory;
-      if(this.article.place_id){
+      if(this.articleForm.value.artPlace){
         this.article.place_id = this.articleForm.value.artPlace;}
-      if(this.article.composition_id){
+      if(this.articleForm.value.artCompo){
         this.article.composition_id = this.articleForm.value.artCompo;}
       if(this.articleForm.value.artEnergy){
         this.article.energy = this.articleForm.value.artEnergy;}
