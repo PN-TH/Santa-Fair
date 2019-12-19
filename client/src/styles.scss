@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'christmas_iconsregular';
+    src: url('assets/fonts/christmas/christmas_icons-webfont.woff2') format('woff2'),
+         url('assets/fonts/christmas/christmas_icons-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
