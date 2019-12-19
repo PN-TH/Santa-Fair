@@ -1,5 +1,6 @@
 export class Review {
-    id : number;
-    review: string;
-    note : number;
+    id: number;
+    commentaire: string;
+    note: number;
+    // article_id: number;
 }

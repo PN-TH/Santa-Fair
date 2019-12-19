@@ -64,7 +64,7 @@ export class CreateComponent implements OnInit {
     this.article.piece = this.articleForm.value.artPiece;
 
     if(this.articleForm.value.artAdvice.artReview){
-      this.review.review = this.articleForm.value.artAdvice.artReview
+      this.review.commentaire = this.articleForm.value.artAdvice.artReview
     }
     if(this.articleForm.value.artAdvice.artNote){
       this.review.note = this.articleForm.value.artAdvice.artNote
