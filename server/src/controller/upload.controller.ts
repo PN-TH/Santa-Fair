@@ -14,14 +14,14 @@ router.use(express.static('uploads'));
 //post
 router.post('/', async (req : Request, res : Response) => {
     try {
-        if(!req.files) {
+        if(!req) {
             res.send({
                 status: false,
                 message: 'No file uploaded'
             });
         } else {
            
-            let photo: any = req.files.photo;
+            let photo: any = req;
             console.log(photo)
             
            
