@@ -17,7 +17,7 @@ export class ReviewComponent implements OnInit {
   note: number;
   newComment: Review = new Review();
 
-  rating : any = [{nom: '☆'},{nom: '☆'},{nom: '☆'},{nom: '☆'},{nom: '☆'}];
+  rating : any = [{nom: 'C'},{nom: 'C'},{nom: 'C'},{nom: 'C'},{nom: 'C'}];
 
   constructor(private articleService : ArticleService, private router: Router) { }
 

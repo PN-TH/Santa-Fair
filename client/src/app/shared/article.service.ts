@@ -16,7 +16,7 @@ export class ArticleService {
   comment: Review;
   comments : Review[];
   articles : Article[]
-  selectedArticle : Article
+  selectedArticle : Article;
 
   private baseUrl = 'http://localhost:3000';
 
