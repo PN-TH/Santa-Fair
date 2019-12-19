@@ -24,6 +24,10 @@ const routes: Routes = [
     component: ReviewComponent
   },
   {
+    path: 'votre-avis',
+    component: ReviewComponent
+  },
+  {
     path: 'les-avis',
     component: UserReviewComponent
   },

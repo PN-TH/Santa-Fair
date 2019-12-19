@@ -22,3 +22,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    height: 100vh;
+    background-image: url('/assets/bg_santafair.jpg');
+    background-size: cover;
+    background-position: center;
+}

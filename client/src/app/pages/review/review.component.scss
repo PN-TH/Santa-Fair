@@ -14,7 +14,7 @@
 }
 
 #avisForm textarea {
-    width: 99%;
+    width: 100%;
 }
 
 #avisForm label p{
@@ -53,11 +53,18 @@
 }
 
 .review {
-    padding: 20px 10px;
+    padding: 10px;
+    background-color: white;
 }
 
 h2 {
     font-size: 20px;
     text-align: center;
     margin-bottom: 10px;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
