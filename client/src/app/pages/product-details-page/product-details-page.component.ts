@@ -52,4 +52,12 @@ export class ProductDetailsPageComponent implements OnInit {
       }
     }
   }
+
+  goToAlternate(alternative){
+    this.articleService.selectedArticle = alternative;
+    this.router.navigate(['/details']);
+    this.alternative=null
+  }
+
+
 }

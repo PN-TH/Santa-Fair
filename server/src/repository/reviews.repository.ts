@@ -33,6 +33,11 @@ export class ReviewsRepository {
     }
 
 
+    findByArticleId(id: number): Promise<Review> {
+      return this.connection.query(`SELECT * FROM ${this.table} WHERE article_id = ?`, [id])
+        .then((results: any) => new Review(results));
+  }
+
     findById(id: number): Promise<Review> {
         return this.connection.query(`SELECT * FROM ${this.table} WHERE id = ?`, [id])
           .then((results: any) => new Review(results[0]));

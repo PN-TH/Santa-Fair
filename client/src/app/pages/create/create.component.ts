@@ -7,6 +7,7 @@ import { Place } from 'src/app/shared/place';
 import { Compo } from 'src/app/shared/compo';
 import { Category } from 'src/app/shared/category';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -45,7 +46,7 @@ export class CreateComponent implements OnInit {
 
   
 
-  constructor(private fb: FormBuilder,private articleService : ArticleService,private httpClient: HttpClient) { }
+  constructor(private fb: FormBuilder,private articleService : ArticleService,private httpClient: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.articleService.getPlaces().subscribe((value)=>{this.places=value;
@@ -89,6 +90,7 @@ export class CreateComponent implements OnInit {
         console.log(res);
         this.article.image =`http://localhost:3000/uploads/${res.data.name}`;
         this.saveArticle();
+        this.router.navigate(['/details']);
       },
       (err) => {console.log(err)}
     );
@@ -117,11 +119,8 @@ export class CreateComponent implements OnInit {
         this.review.note = this.articleForm.value.artAdvice.artNote
       }
 
-      this.articleService.addArticle(this.article).subscribe(
-        result=>{
-          console.log(result)
-        }
-      ); 
+      this.articleService.addArticle(this.article);
+      this.articleService.selectedArticle = this.article;
     };
       
       

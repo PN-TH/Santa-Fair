@@ -46,7 +46,9 @@
             <div class="note">
                 Note Santa Fair : {{ articleService.selectedArticle?.note_SF }}
             </div>
-
+            <div class="note">
+                Évaluations utilisateurs : {{ articleService.averageUserNote }}
+            </div>
 
             <div class="comment">
                 <div class="comments">
@@ -65,10 +67,11 @@
                 <h5>L'alternative :</h5> 
                 <div>{{alternative.name}}</div>
                 <div>Note Santa Fair : {{alternative.note_SF}}</div>
+                <button (click)="goToAlternate(alternative)">Voir le jouet</button>
             </div>
             <img [src]="alternative.image"> 
         </div>
-        <div *ngIf="!alternative && this.articleService.selectedArticle?.note_SF<4">
+        <div *ngIf="!alternative && this.articleService.selectedArticle?.note_SF < 4">
             Pas encore d'alternative pour ce jouet
         </div>
     </div>

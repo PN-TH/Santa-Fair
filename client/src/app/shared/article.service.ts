@@ -21,6 +21,7 @@ export class ArticleService {
   wishlistArticle: Article[] = []
   total: number;
   keyWord : string = '';
+  averageUserNote : number;
 
   private baseUrl = 'http://localhost:3000';
   
@@ -36,8 +37,8 @@ export class ArticleService {
     return this.http.get(`${this.baseUrl}/avis`);
   };
 
-  getCommentsById(id): Observable<any> {
-     return this.http.get(`${this.baseUrl}/avis:id/?id=${id}`)
+  getCommentsByArticles(article_id): Observable<any> {
+     return this.http.get(`${this.baseUrl}/avis/search/?article_id=${article_id}`)
   }
 
   addComment(newComment){

@@ -23,7 +23,8 @@ export class HomeSearchComponent implements OnInit {
 
   ngOnInit() {
     this.articleService.getArticleArray();
-    this.getPlaces()
+    this.getPlaces();
+    this.getCompositions();
   }
 
   onChangeSearch(article){
@@ -37,6 +38,13 @@ export class HomeSearchComponent implements OnInit {
     this.router.navigate(["/details"])
     this.articleService.getNote(article)
   }
+
+
+    getCompositions(){
+      this.articleService.getCompos().subscribe((response:any)=>
+      this.articleService.compositions = response)
+    }
+
 
     getPlaces(){
       this.articleService.getPlaces().subscribe((response:any)=>
