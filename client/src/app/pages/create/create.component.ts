@@ -58,6 +58,12 @@ export class CreateComponent implements OnInit {
       photo: ['']
     });
  
+    // if (this.articleService.keyWord === undefined) {
+    //   this.articleService.keyWord === ''
+    // }
+
+    console.log(this.articleService.keyWord)
+
 
 
   }

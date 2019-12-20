@@ -20,7 +20,7 @@ export class ArticleService {
   compositions : Compo[]
   wishlistArticle: Article[] = []
   total: number;
-  keyWord : string
+  keyWord : string = '';
   averageUserNote : number;
 
   private baseUrl = 'http://localhost:3000';
@@ -98,7 +98,7 @@ export class ArticleService {
   };
 
   initName(keyWord){
-    this.keyWord = keyWord
+      this.keyWord = keyWord
   }
 
 

@@ -12,6 +12,7 @@
     color: rgb(228, 228, 228);
     margin-right: 6px;
     cursor: pointer;
+    font-size: 25px;
 }
 
 .thomas .fas {
@@ -94,5 +95,11 @@ $black: #000000;
 }
 nav {
     position: fixed;
+    top: 10px;
+    left: 10px;
+}
 
+nav a {
+    color: white;
+    font-family: 'christmas_day_personal_useRg';
 }
