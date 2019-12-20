@@ -43,12 +43,15 @@
                 <button (click)="addWishlist()">Ajouter à ma liste</button>
             </div>
 
-            <div class="note">
-                Note Santa Fair : {{ articleService.selectedArticle?.note_SF }}
+            <div class="noteSF">
+                Note Santa Fair : <img [src]="noteUrl">
             </div>
             <div class="note">
-                Évaluations utilisateurs : {{ articleService.averageUserNote }}
+                Évaluations utilisateurs : 
+                <span *ngIf="articleService.averageUserNote">{{ articleService.averageUserNote }}</span>
+                <span *ngIf="!articleService.averageUserNote">Notez ce jouet !</span>
             </div>
+
 
             <div class="comment">
                 <div class="comments">

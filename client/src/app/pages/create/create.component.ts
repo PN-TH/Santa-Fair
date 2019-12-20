@@ -119,8 +119,13 @@ export class CreateComponent implements OnInit {
         this.review.note = this.articleForm.value.artAdvice.artNote
       }
 
-      this.articleService.addArticle(this.article);
-      this.articleService.selectedArticle = this.article;
+      this.articleService.addArticle(this.article).subscribe(
+        result=>{
+          console.log(result)
+          this.articleService.selectedArticle = this.article;
+        }
+      ); 
+      
     };
       
       

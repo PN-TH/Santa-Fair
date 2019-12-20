@@ -14,6 +14,7 @@ export class ProductDetailsPageComponent implements OnInit {
   isDetachedPieces: boolean;
   isRecyclable : boolean;
   alternative : Article;
+  noteUrl : string;
 
   constructor(private articleService : ArticleService, private router: Router) { }
 
@@ -27,6 +28,9 @@ export class ProductDetailsPageComponent implements OnInit {
   getArticle(){
     this.articleService.getArticles().subscribe(  (response : any) => {
       this.articleService.articles = response;
+
+      this.noteUrl='assets/vote'+this.articleService.selectedArticle.note_SF +'.png'
+
     })
   }
 
