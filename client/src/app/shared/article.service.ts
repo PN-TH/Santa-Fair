@@ -21,6 +21,7 @@ export class ArticleService {
   wishlistArticle: Article[] = []
   total: number;
   keyWord : string
+  averageUserNote : number;
 
   private baseUrl = 'http://localhost:3000';
   
