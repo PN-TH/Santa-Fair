@@ -7,7 +7,7 @@
               <label class="amaury">
                   Nom du jouet * :
                   <br>
-                  <input type="text" formControlName="artName">
+                  <input type="text" formControlName="artName" placeholder="" value="">
                   <div *ngIf="articleForm.controls['artName'].errors && !articleForm.controls['artName'].pristine"
                       class="error-msg">
                       <div [hidden]="!articleForm.controls['artName'].errors.required">Merci d'entrer un nom de jouet!

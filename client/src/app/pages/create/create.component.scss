@@ -17,7 +17,7 @@
 
 .create {
     padding: 10px;
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: rgb(255, 255, 255, 0.7);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -37,4 +37,8 @@ h3 {
 
 .amaury input {
     width: 100%;
+}
+
+button:hover {
+    background-color: white;
 }

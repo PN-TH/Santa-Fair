@@ -13,35 +13,38 @@
 
     <div class="white">
         <div class="spec">
-            <div class="spec-item">
-                <div *ngIf="this.articleService.selectedArticle?.energy">
-                    <img src="assets/battery.png" alt="necessite des piles/batterie">
+            <div class="spec-bar">
+                <div class="spec-item">
+                    <div *ngIf="this.articleService.selectedArticle?.energy">
+                        <img src="assets/battery.png" alt="necessite des piles/batterie">
+                    </div>
+                
+                    <div *ngIf="!this.articleService.selectedArticle?.energy">
+                        <img src="assets/no-battery.png" alt="ne necessite pas de piles/batterie">
+                    </div>
+                
+                    <div *ngIf="this.articleService.selectedArticle?.piece">
+                        <img src="assets/spanner.png" alt="Pièces détachées disponibles">
+                    </div>
+                
+                    <div *ngIf="!this.articleService.selectedArticle?.piece">
+                        <img src="assets/no-spanner.png" alt="Pièces détachées non disponibles">
+                    </div>
+                
+                    <div *ngIf="this.articleService.selectedArticle?.packaging">
+                        <img src="assets/recyclable.png" alt="Emballage ecologique">
+                    </div>
+                
+                    <div *ngIf="!this.articleService.selectedArticle?.packaging">
+                        <img src="assets/no-recyclable.png" alt="Suremballage">
+                    </div>
                 </div>
-            
-                <div *ngIf="!this.articleService.selectedArticle?.energy">
-                    <img src="assets/no-battery.png" alt="ne necessite pas de piles/batterie">
-                </div>
-            
-                <div *ngIf="this.articleService.selectedArticle?.piece">
-                    <img src="assets/spanner.png" alt="Pièces détachées disponibles">
-                </div>
-            
-                <div *ngIf="!this.articleService.selectedArticle?.piece">
-                    <img src="assets/no-spanner.png" alt="Pièces détachées non disponibles">
-                </div>
-            
-                <div *ngIf="this.articleService.selectedArticle?.packaging">
-                    <img src="assets/recyclable.png" alt="Emballage ecologique">
-                </div>
-            
-                <div *ngIf="!this.articleService.selectedArticle?.packaging">
-                    <img src="assets/no-recyclable.png" alt="Suremballage">
-                </div>
+
+                <button (click)="addWishlist()">Ajouter à ma liste</button>
             </div>
 
             <div class="note">
                 Note Santa Fair : {{ articleService.selectedArticle?.note_SF }}
-                <button (click)="addWishlist()">Ajouter à ma liste</button>
             </div>
 
 
@@ -57,10 +60,13 @@
         </div>
     </div>
     <div class="alternative">
-        <div *ngIf="alternative">
-            L'alternative : <img [src]="alternative.image"> 
-            <div>{{alternative.name}}</div>
-            <div>Note Santa Fair : {{alternative.note_SF}}</div>
+        <div *ngIf="alternative" class="alt">
+            <div class="alt-title">
+                <h5>L'alternative :</h5> 
+                <div>{{alternative.name}}</div>
+                <div>Note Santa Fair : {{alternative.note_SF}}</div>
+            </div>
+            <img [src]="alternative.image"> 
         </div>
         <div *ngIf="!alternative && this.articleService.selectedArticle?.note_SF<4">
             Pas encore d'alternative pour ce jouet
