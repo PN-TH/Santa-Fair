@@ -90,7 +90,7 @@ export class CreateComponent implements OnInit {
         console.log(res);
         this.article.image =`http://localhost:3000/uploads/${res.data.name}`;
         this.saveArticle();
-        this.router.navigate(['/details']);
+        this.router.navigate(['/home']);
       },
       (err) => {console.log(err)}
     );
@@ -123,6 +123,10 @@ export class CreateComponent implements OnInit {
         result=>{
           console.log(result)
           this.articleService.selectedArticle = this.article;
+          this.articleService.getCommentsByArticles(this.articleService.selectedArticle.id).subscribe(
+            response=>this.articleService.comments=Object.values(response)
+           
+          )
         }
       ); 
       
