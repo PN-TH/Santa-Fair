@@ -1,6 +1,6 @@
 <div class="container">
     <div class="create">
-      <h3>Renseigner un nouveau jouet</h3>
+      <h3>Nouveau jouet</h3>
       
       <form [formGroup]="articleForm" (ngSubmit)="onSubmit()" class="form">
           <div>
@@ -47,32 +47,47 @@
               </label>
           </div>
           <div>
-              <label>
-                  Est-ce un jouet à piles ?
-                  <input type="radio" formControlName="artEnergy" name="artEnergy" value=1 id="oui" />
-                  <label for="oui">oui</label>
-                  <input type="radio" formControlName="artEnergy" name="artEnergy" value=0 id="non" />
-                  <label for="non">non</label>
+              <label class="hugo"> 
+                  <div>
+                      Est-ce un jouet à piles ?
+                  </div>
+
+                  <div>
+                      <input type="radio" formControlName="artEnergy" name="artEnergy" value=1 id="oui" />
+                      <label for="oui">oui</label>
+                      <input type="radio" formControlName="artEnergy" name="artEnergy" value=0 id="non" />
+                      <label for="non">non</label>
+                  </div>
               </label>
           </div>
 
           <div>
-              <label>
-                  Est-il sur-emballé ?
-                  <input type="radio" formControlName="artPackaging" name="artPackaging" value=1 id="oui" />
-                  <label for="oui">oui</label>
-                  <input type="radio" formControlName="artPackaging" name="artPackaging" value=0 id="non" />
-                  <label for="non">non</label>
+              <label class="hugo">
+                  <div>
+                      Est-il sur-emballé ?
+                  </div>
+
+                  <div>
+                      <input type="radio" formControlName="artPackaging" name="artPackaging" value=1 id="oui" />
+                      <label for="oui">oui</label>
+                      <input type="radio" formControlName="artPackaging" name="artPackaging" value=0 id="non" />
+                      <label for="non">non</label>
+                  </div>
               </label>
           </div>
 
           <div>
-              <label>
-                  Est-il facilement réparable?
-                  <input type="radio" formControlName="artPiece" name="artPiece" value=1 id="oui" />
-                  <label for="oui">oui</label>
-                  <input type="radio" formControlName="artPiece" name="artPiece" value=0 id="non" />
-                  <label for="non">non</label>
+              <label class="hugo">
+                  <div>
+                      Est-il facilement réparable?
+                  </div>
+
+                  <div>
+                      <input type="radio" formControlName="artPiece" name="artPiece" value=1 id="oui" />
+                      <label for="oui">oui</label>
+                      <input type="radio" formControlName="artPiece" name="artPiece" value=0 id="non" />
+                      <label for="non">non</label>
+                  </div>
               </label>
           </div>
           <button type="submit" [disabled]="!articleForm.valid">Envoyer</button>

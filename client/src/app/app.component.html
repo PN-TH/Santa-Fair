@@ -28,8 +28,11 @@
         <div class="modal-body">
             <section>
                 <div class="articleList" *ngFor="let a of articleService.wishlistArticle; index as i">
-
+                  <div class="article">
                     <img class="articlePicture" src="{{a.image}}" alt="{{ a.name }}"/>
+                    <p>{{ a.name }}</p>
+                  </div>
+
                     <div class="thomas">
 
                         <i (click)="deleteWish(i)" class="fas fa-times-circle fa-2x"></i>
