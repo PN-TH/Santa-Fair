@@ -33,7 +33,7 @@ section {
 }
 
 .articlePicture {
-    width: 200px;
+    width: 60px;
 }
 
 .articleList p {
@@ -101,5 +101,21 @@ nav {
 
 nav a {
     color: white;
+    font-family: 'christmas_day_personal_useRg';
+    outline: 0;
+}
+
+.article {
+    display: flex;
+    align-items: center;
+}
+
+.article p {
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+.modal-header h5 {
     font-family: 'christmas_day_personal_useRg';
 }
